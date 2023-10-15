@@ -1,0 +1,54 @@
+<nav class="m-4">
+    <ul class="flex flex-wrap gap-2 sm:gap-4 items-center justify-center">
+    <li>
+        <a href="" class="">
+        <button class="bg-transparent text-white link link-underline link-underline-black
+         rounded-2xl p-3 sm:p-4 font-bold">About
+        </button>
+        </a>
+    </li>
+    <li>
+        <a href="" class="">
+        <button class="bg-transparent text-white link link-underline link-underline-black
+         rounded-2xl p-3 sm:p-4 font-bold">Blogs
+        </button>
+        </a>
+    </li>
+    <li>
+        <a href="" class="">
+        <button class="bg-transparent text-white link link-underline link-underline-black
+         rounded-2xl p-3 sm:p-4 font-bold">Works
+        </button>
+        </a>
+    </li>
+    <li>
+        <a href="" class="">
+        <button class="bg-transparent text-white link link-underline link-underline-black
+         rounded-2xl p-3 sm:p-4 font-bold">Contact
+        </button>
+        </a>
+    </li> 
+    </ul>
+</nav>
+
+<style>
+    .link-underline {
+        border-bottom-width: 0;
+        background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+        background-size: 0 1px;
+        background-position: 50% 100%;
+        background-repeat: no-repeat;
+        transition: background-size .2s ease-in-out, background-color .15s ease-in-out;
+        background-color: transparent;
+    }
+
+    .link-underline-black {
+        background-image: linear-gradient(transparent, transparent), linear-gradient(#67E8F9, #67E8F9)
+    }
+
+    .link-underline:hover {
+        background-size: 100% 2px;
+        background-position: 50% 100%;
+        background-color: #6b7280;
+    }
+</style>

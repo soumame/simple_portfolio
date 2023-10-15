@@ -3,6 +3,8 @@ import About from "../components/About.astro";
 import Works from "../components/Works.astro";
 import Blogs from "../components/Blogs.astro";
 import Contact from "../components/Contact.astro";
+import Navbar from "../components/Navbar.astro";
+import Motion from "../componrnts/Motion.jsx";
 ---
 
 <html lang="en">
@@ -14,20 +16,21 @@ import Contact from "../components/Contact.astro";
     <title>Astro</title>
   </head>
   <body
-    class="w-screen h-screen p-4 flex justify-center items-center
+    class="w-screen h-screen p-4 flex flex-col justify-center items-center
   dark:bg-slate-800 bg-slate-400"
   >
     <!--本体 -->
     <div
+      id="margin"
       class="w-full h-full overflow-scroll bg-gray-400 rounded-2xl sm:rounded-3xl overscroll-contain snap-y snap-mandatory
-	  sm:max-w-[36rem] sm:max-h-[48rem]"
+	  sm:max-w-[36rem] sm:max-h-[48rem] reveal"
     >
       <div class="w-full h-full"><About /></div>
       <div class="w-full h-full"><Works /></div>
       <div class="w-full h-full"><Blogs /></div>
       <div class="w-full h-full"><Contact /></div>
-      <!--ナビゲーション -->
-      <nav></nav>
     </div>
+    <!--ナビゲーション -->
+    <Navbar />
   </body>
 </html>
