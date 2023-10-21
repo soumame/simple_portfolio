@@ -5,15 +5,19 @@ import contacts from "../../../YourSNS.json";
 <script src="https://kit.fontawesome.com/e09742380f.js" crossorigin="anonymous"
 ></script>
 <div class="snap-center w-full h-full p-4">
-  <span class="fa-solid fa-user fill-black text-black w-12 h-12 my-2"></span>
-  <h2 class="text-4xl font-bold my-2">Contact</h2>
-  <div class="gap-4 grid-cols-3 grid mt-2">
+  <div class="flex md:flex-col">
+    <span
+      class="fa-solid fa-user fill-gray-200 text-gray-200 w-8 h-8 md:w-12 md:h-12 my-2"
+    ></span>
+    <h2 class="text-4xl font-bold my-2 text-gray-200">Contact</h2>
+  </div>
+  <div class="gap-4 md:grid-cols-3 grid-cols-2 grid mt-2">
     {
       contacts.map(({ label, link, icon }) => (
-        <div class="bg-black rounded-3xl border-white relative flex jusify-center items-center w-40 h-40 shadow-xl">
+        <div class="bg-gray-200 rounded-3xl border-gray-200 relative flex jusify-center items-center sm:w-40 sm:h-40 w-32 h-32 shadow-xl">
           <a href={link} class="absolute w-full h-full right-0 top-0" />
           <span
-            class={`fill-white text-white w-16 h-16 mx-auto ${icon}`}
+            class={`fill-gray-800 text-gray-800 w-16 h-16 mx-auto ${icon}`}
             aria-label="{label}"
           />
         </div>

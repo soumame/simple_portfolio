@@ -13,6 +13,13 @@ import Navbar from "../../components/Navbar.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body
     class="w-screen h-screen p-4 flex flex-col justify-center items-center
@@ -28,10 +35,10 @@ import Navbar from "../../components/Navbar.astro";
       <div class="w-full h-full bg-blue-500 revealing" id="works">
         <Works />
       </div>
-      <div class="w-full h-full bg-red-500 revealing" id="blogs">
+      <div class="w-full h-full bg-gray-200 revealing" id="blogs">
         <Blogs />
       </div>
-      <div class="w-full h-full bg-yellow-500 revealing" id="contact">
+      <div class="w-full h-full bg-gray-800 revealing" id="contact">
         <Contact />
       </div>
     </div>

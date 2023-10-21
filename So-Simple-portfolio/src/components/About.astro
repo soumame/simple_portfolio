@@ -2,12 +2,16 @@
 import yourinfo from "../../../YOURINFO.json";
 ---
 
-<div class="snap-center w-full h-full">
+<div
+  class="snap-center w-full h-full flex justify-center items-center flex-col"
+>
   {
     yourinfo.map(({ name, bio }) => (
       <>
-        <h1 class="text-4xl font-bold text-center text-white">{name}</h1>
-        <p class="text-2xl text-center text-white">{bio}</p>
+        <h1 class="text-4xl font-bold font-Mono text-center text-white drop-shadow-lg shadow-white">
+          {name}
+        </h1>
+        <p class="text-2xl text-center font-Mono text-white">{bio}</p>
       </>
     ))
   }

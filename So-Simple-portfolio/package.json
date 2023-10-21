@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update-rss": "node ./src/rss/rss-parser.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.3",
