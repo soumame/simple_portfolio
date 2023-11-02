@@ -1,26 +1,30 @@
 ---
-import data from "../rss/data.json";
+import data from "../rss/items.json";
 ---
 
 <script src="https://kit.fontawesome.com/e09742380f.js" crossorigin="anonymous"
 ></script>
-<div class="snap-center w-full h-full p-4">
+<div class="snap-center w-full h-full sm:p-4 p-2 font-bold">
   <div class="flex md:flex-col">
     <span
       class="fa-solid fa-comments fill-black text-black w-8 h-8 md:w-12 md:h-12 my-2"
     ></span>
-    <h2 class="text-4xl font-bold md:my-2">Blog</h2>
+    <div class="flex flex-row">
+      <h2 class="text-4xl font-bold md:my-2 font-mono">Blog</h2>
+      <img src="note.svg" alt="note" class="md:my-2 w-16 h-16" />
+    </div>
   </div>
-  <div class="gap-4 text-white">
+  <div class="gap-4 text-white grid-rows-4">
     {
-      data.slice(0, 4).map(({ title, contentSnippet }) => (
+      data.slice(0, 4).map(({ title, contentSnippet, og }) => (
         <div class="w-full bg-gray-800 rounded-3xl p-3 h-full my-1">
-          <img src="" alt="" class="w-full rounded-3xl" />
-          <h3 class="md:text-xl text-xl font-bold line-clamp-2">{title}</h3>
+          
+          <h3 class="md:text-xl sm:text-lg text-base font-bold line-clamp-2 font-sansbold">{title}</h3>
           <div class="flex mt-2">
-            <p class="sm:line-clamp-2 line-clamp-1 text-sm md:text-base">
+            <p class="sm:line-clamp-2 line-clamp-1 text-sm md:text-base font-sansthin">
               {contentSnippet}
             </p>
+            <img src={og} alt="" class="w-36 rounded-xl p-1" />
           </div>
         </div>
       ))

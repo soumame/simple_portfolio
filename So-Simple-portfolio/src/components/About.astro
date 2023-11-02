@@ -3,16 +3,22 @@ import yourinfo from "../../../YOURINFO.json";
 ---
 
 <div
-  class="snap-center w-full h-full flex justify-center items-center flex-col"
+  class="snap-center w-full h-full flex justify-center items-center flex-col relative sm:p-4 p-2"
 >
   {
-    yourinfo.map(({ name, bio }) => (
+    yourinfo.map(({ name, bio, icon }) => (
       <>
-        <h1 class="text-4xl font-bold font-Mono text-center text-white drop-shadow-lg shadow-white">
+      <div class="flex flex-col gap-2 items-center justify-center">
+        <img src={icon} class="w-24 h-24 rounded-full shadow-white" />
+        <h1 class="text-4xl font-bold font-mono text-center text-white drop-shadow-lg shadow-white">
           {name}
         </h1>
-        <p class="text-2xl text-center font-Mono text-white">{bio}</p>
+      </div>
+        <p class="text-2xl text-center font-sans text-white">{bio}</p>
       </>
     ))
   }
+  <span
+    class="fa-solid fa-angles-down fill-orange-500 text-orange-500 w-12 h-12 absolute bottom-10 animate-pulse"
+  ></span>
 </div>

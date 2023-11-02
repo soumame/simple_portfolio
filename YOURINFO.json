@@ -1,9 +1,7 @@
-[{
-"name": "So Tokumaru",
-"bio": "こんにちは！"
-},
-{
-"name-en": "So Tokumaru",
-"bio-en": "Hi!"
-}
-]  
+[
+  {
+    "name": "So Tokumaru",
+    "bio": "こんにちは！",
+    "icon": "https://pbs.twimg.com/profile_images/1517715992469970945/_66xagxr_400x400.jpg"
+  }
+]

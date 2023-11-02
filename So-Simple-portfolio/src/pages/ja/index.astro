@@ -1,9 +1,13 @@
 ---
 import About from "../../components/About.astro";
 import Works from "../../components/Works.astro";
+import Works2 from "../../components/Works.astro";
+
 import Blogs from "../../components/Blogs.astro";
 import Contact from "../../components/Contact.astro";
 import Navbar from "../../components/Navbar.astro";
+import Contact2 from "../../components/Contact.tsx";
+import '../../styles/main.css';
 ---
 
 <html lang="en">
@@ -22,7 +26,7 @@ import Navbar from "../../components/Navbar.astro";
     />
   </head>
   <body
-    class="w-screen h-screen p-4 flex flex-col justify-center items-center
+    class="w-screen h-screen sm:p-4 p-2 flex flex-col justify-center items-center
   dark:bg-slate-800 bg-slate-400 scroll-smooth"
   >
     <!--本体 -->
@@ -32,14 +36,20 @@ import Navbar from "../../components/Navbar.astro";
       class="w-full h-full overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-500"
     >
       <div class="w-full h-full" id="about"><About /></div>
-      <div class="w-full h-full bg-blue-500 revealing" id="works">
+      <div class="w-full h-full bg-lime-500 revealing" id="works">
         <Works />
       </div>
-      <div class="w-full h-full bg-gray-200 revealing" id="blogs">
+      <div class="w-full h-full bg-lime-500 revealing" id="works">
+        <Works2 />
+      </div>
+      <div class="w-full h-full bg-gray-300 revealing" id="blogs">
         <Blogs />
       </div>
       <div class="w-full h-full bg-gray-800 revealing" id="contact">
         <Contact />
+      </div>
+      <div class="w-full h-full bg-gray-800 revealing" id="contact">
+        <Contact2 />
       </div>
     </div>
     <!--ナビゲーション -->
@@ -49,7 +59,7 @@ import Navbar from "../../components/Navbar.astro";
 <style>
   @keyframes reveal {
     from {
-      opacity: 0.8;
+      opacity: 0;
       clip-path: circle(0%);
     }
     to {
@@ -68,7 +78,7 @@ import Navbar from "../../components/Navbar.astro";
     animation-timeline: --revealing;
 
     /* Tweak range when effect should run*/
-    animation-range: entry 55% cover 60%;
+    animation-range: entry 45% cover 50%;
   }
 
   @keyframes shrink {
