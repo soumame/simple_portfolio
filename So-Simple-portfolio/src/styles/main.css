@@ -1,22 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  @font-face {
-    font-family: "Seed-bold";
-    src: url("../../fonts/LINESeedJP_OTF_Bd.woff2");
-  }
-  @font-face {
-    font-family: "Seed-regular";
-    src: url("../../fonts/LINESeedJP_OTF_Rg.woff2");
-  }
-  @font-face {
-    font-family: "Seed-thin";
-    src: url("../../fonts/LINESeedJP_OTF_Th.woff2");
-  }
-  @font-face {
-    font-family: "Seed-extrabold";
-    src: url("../../fonts/LINESeedJP_OTF_Eb.woff2");
-  }
-}

@@ -1,31 +1,32 @@
 [
-{
-"label": "X (Twitter)",
-"link": "https://twitter.com/so_to9",
-"icon": "fa-brands fa-x-twitter"
-},
-{
-"label": "X (Twitter)",
-"link": "https://twitter.com/so_to9",
-"icon": "fa-brands fa-x-twitter"
-},
-{
-"label": "X (Twitter)",
-"link": "https://twitter.com/so_to9",
-"icon": "fa-brands fa-x-twitter"
-},{
-"label": "X (Twitter)",
-"link": "https://twitter.com/so_to9",
-"icon": "fa-brands fa-x-twitter"
-},{
-"label": "X (Twitter)",
-"link": "https://twitter.com/so_to9",
-"icon": "fa-brands fa-x-twitter"
-},
-{
-"label": "Instagram",
-"link": "https://instagram.com/so_toku",
-"icon": "fa-brands fa-instagram"
-}
-
+  {
+    "label": "X (Twitter)",
+    "link": "https://twitter.com/so_to9",
+    "icon": "fa-brands fa-x-twitter"
+  },
+  {
+    "label": "X (Twitter)",
+    "link": "https://twitter.com/so_to9",
+    "icon": "fa-brands fa-x-twitter"
+  },
+  {
+    "label": "X (Twitter)",
+    "link": "https://twitter.com/so_to9",
+    "icon": "fa-brands fa-x-twitter"
+  },
+  {
+    "label": "X (Twitter)",
+    "link": "https://twitter.com/so_to9",
+    "icon": "fa-brands fa-x-twitter"
+  },
+  {
+    "label": "X (Twitter)",
+    "link": "https://twitter.com/so_to9",
+    "icon": "fa-brands fa-x-twitter"
+  },
+  {
+    "label": "Instagram",
+    "link": "https://instagram.com/so_toku",
+    "icon": "fa-brands fa-instagram"
+  }
 ]

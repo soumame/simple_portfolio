@@ -35,7 +35,7 @@ async function fetchFeedItems(url) {
           og,
           dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
         };
-      })
+      }),
     );
 
     return feedItems.filter(({ title, link }) => title && link);

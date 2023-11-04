@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     <div className="snap-center w-full h-full p-4">
       <div className="flex md:flex-col">
         <span className="fa-solid fa-user fill-gray-200 text-gray-200 w-8 h-8 md:w-12 md:h-12 my-2"></span>
-        <h2 className="text-4xl font-bold my-2 text-gray-200">Contact</h2>
+        <h2 className="text-4xl  my-2 text-gray-200">Contact</h2>
       </div>
       <div className="gap-4 md:grid-cols-3 grid-cols-2 grid mt-2 h-[80%]">
         {contacts.map(({ label, link, icon }) => (

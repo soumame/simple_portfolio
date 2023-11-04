@@ -7,7 +7,7 @@ import Blogs from "../../components/Blogs.astro";
 import Contact from "../../components/Contact.astro";
 import Navbar from "../../components/Navbar.astro";
 import Contact2 from "../../components/Contact.tsx";
-import '../../styles/main.css';
+import "../../styles/main.css";
 ---
 
 <html lang="en">
@@ -21,29 +21,26 @@ import '../../styles/main.css';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Noto+Sans+JP:wght@200;400;700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
       rel="stylesheet"
     />
   </head>
   <body
-    class="w-screen h-screen sm:p-4 p-2 flex flex-col justify-center items-center
+    class="w-[100svw] h-[100svh] sm:p-4 p-2 flex flex-col justify-center items-center
   dark:bg-slate-800 bg-slate-400 scroll-smooth"
   >
     <!--本体 -->
 
     <div
       id="margin"
-      class="w-full h-full overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-500"
+      class="w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-500"
     >
       <div class="w-full h-full" id="about"><About /></div>
       <div class="w-full h-full bg-lime-500 revealing" id="works">
         <Works />
       </div>
-      <div class="w-full h-full bg-lime-500 revealing" id="works">
-        <Works2 />
-      </div>
       <div class="w-full h-full bg-gray-300 revealing" id="blogs">
-        <Blogs />
+        <Blogs bgColor="gray" textColor="red" />
       </div>
       <div class="w-full h-full bg-gray-800 revealing" id="contact">
         <Contact />

@@ -1,29 +1,30 @@
 ---
 import works from "../../../WORKS.json";
 ---
-<div class="snap-center w-full h-full sm:p-4 p-2 rounded-3xl overflow-hidden">
+<div class="snap-center w-full h-full sm:p-4 p-2 rounded-3xl">
     <div class="flex md:flex-col">
         <span
           class="fa-solid fa-user fill-black text-black w-8 h-8 md:w-12 md:h-12 my-2"
         ></span>
-        <h2 class="text-4xl font-bold my-2 text-black font-mono">Works</h2>
+        <h2 class="text-4xl  my-2 text-black ">Works</h2>
       </div>
-    <div class="carousel w-full aspect-video rounded-3xl mt-4">
+    <div id="scrollContainer" class="mt-4 flex flex-row overflow-x-scroll flex-nowrap gap-2 snap-x snap-mandatory py-2">
         {
                 works.map(({ Title, image, description, link }, index) => (
-        <div id={`slide${index+1}`} class="carousel-item relative w-full">
-            <img src={image} class="w-full saturate-100" />
-            <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold">{Title}</h2>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href={`#slide${index}`} class="btn btn-circle font-mono"><span class="fa-solid fa-arrow-left w-6 h-6"></span></a> 
-                <a href={`#slide${index+2}`} class="btn btn-circle font-mono"><span class="fa-solid fa-arrow-right w-6 h-6"></span></a>
-            </div>
-            <div>
-             <p class="bg-red-500 absolute -bottom-10 left-0 z-50">{description}</p>
-             </div>
+        <div id={`slide${index+1}`} class="w-[70%] h-full flex-shrink-0 bg-gray-200 rounded-3xl p-3 snap-start ">
+            <img src={image} class="saturate-100 aspect-square w-[70%] rounded-3xl"/>
+            <h3 class="text-2xl ">{Title}</h2>
+            <p class="bg-red-500">{description}</p>
 
         </div>
 
         ))}
       </div>
+
+
+      <div class="m-2 flex items-end justify-end gap-2">
+        <button class="bg-gray-300 text-white rounded-full p-3" onclick="scroll(-1);">&larr;</button>
+        <button class="bg-gray-300 text-white rounded-full p-3" onclick="scroll(1);">&rarr;</button>
+      </div>
+
 </div>

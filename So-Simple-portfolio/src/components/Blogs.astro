@@ -1,33 +1,68 @@
 ---
 import data from "../rss/items.json";
+const { bgColor } = Astro.props;
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <script src="https://kit.fontawesome.com/e09742380f.js" crossorigin="anonymous"
 ></script>
-<div class="snap-center w-full h-full sm:p-4 p-2 font-bold">
+<div class="snap-center w-full h-full sm:p-4 p-2">
   <div class="flex md:flex-col">
-    <span
-      class="fa-solid fa-comments fill-black text-black w-8 h-8 md:w-12 md:h-12 my-2"
-    ></span>
+    <span class="fa-solid fa-comments w-8 h-8 md:w-12 md:h-12 my-2"></span>
     <div class="flex flex-row">
-      <h2 class="text-4xl font-bold md:my-2 font-mono">Blog</h2>
-      <img src="note.svg" alt="note" class="md:my-2 w-16 h-16" />
+      <h2 class="text-4xl md:my-2 font-bold">Blog</h2>
     </div>
   </div>
-  <div class="gap-4 text-white grid-rows-4">
+
+  <div
+    id="scrollContainer"
+    class="mt-4 flex flex-row overflow-x-scroll flex-nowrap gap-2 snap-x snap-mandatory py-3 relative font-noto"
+  >
     {
-      data.slice(0, 4).map(({ title, contentSnippet, og }) => (
-        <div class="w-full bg-gray-800 rounded-3xl p-3 h-full my-1">
-          
-          <h3 class="md:text-xl sm:text-lg text-base font-bold line-clamp-2 font-sansbold">{title}</h3>
-          <div class="flex mt-2">
-            <p class="sm:line-clamp-2 line-clamp-1 text-sm md:text-base font-sansthin">
-              {contentSnippet}
-            </p>
-            <img src={og} alt="" class="w-36 rounded-xl p-1" />
-          </div>
+      data.slice(0, 6).map(({ title, contentSnippet, og, link }) => (
+        <div
+          class={`w-[70%] h-full flex-shrink-0 bg-${bgColor}-200 rounded-3xl p-3 snap-start shadow-md`}
+        >
+          <img
+            src={og}
+            alt=""
+            class="saturate-100 aspect-square md:aspect-auto w-[70%] rounded-3xl"
+          />
+          <h3 class="text-2xl font-bold font-noto pt-3">{title}</h3>
+          <p class="line-clamp-5 font-normal pt-2">{contentSnippet}</p>
+          <a href={link}>
+            <button class="bg-blue-400 p-3 rounded-full">
+              {t("button.readmore")}
+            </button>
+          </a>
         </div>
       ))
     }
+    <div
+      class={`flex flex-col justify-center flex-shrink-0 items-center w-[70%] h-full snap-start rounded-3xl p-3 shadow-md bg-${bgColor}-200 `}
+    >
+      <img
+        src="note.svg"
+        alt="note"
+        class="md:my-2 w-16 h-16 bg-white rounded-full"
+      />
+      <p>{t("text.seemore_note")}</p>
+      <span class="fa-solid fa-arrow-right w-8 h-8"></span>
+    </div>
+    <div class="right-2 bottom-0 flex justify-end items-end sticky gap-2">
+      <button
+        class="bg-gray-500/60 backdrop-blur-sm text-white rounded-full p-4"
+        onclick="scroll(-1);"
+        ><span class="fa-solid fa-arrow-left"></span></button
+      >
+      <button
+        class="bg-gray-500/60 backdrop-blur-sm text-white rounded-full p-4"
+        onclick="scroll(1);"
+        ><span class="fa-solid fa-arrow-right"></span></button
+      >
+    </div>
   </div>
 </div>

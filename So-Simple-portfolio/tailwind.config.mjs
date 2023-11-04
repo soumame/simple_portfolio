@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      mono: ['"IBM Plex Mono"', "Zen Kaku Gothic Antique"],
-      sansbold: ["Seed-bold"],
-      sans: ["Seed-regular"],
-      sansthin: ["Seed-thin"],
-      sansex: ["Seed-extrabold"],
+      mono: [
+        '"IBM Plex Mono"',
+        "Zen Kaku Gothic Antique",
+        "Noto Sans Japanese",
+      ],
+      noto: ["Noto Sans Japanese 200"],
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [],
 };

@@ -1,18 +1,17 @@
 export const languages = {
-    en: 'English',
-    fr: 'Français',
-  };
-  
-  export const defaultLang = 'en';
-  
-  export const ui = {
-    en: {
-      'nav.home': 'Home',
-      'nav.about': 'About',
-      'nav.twitter': 'Twitter',
-    },
-    fr: {
-      'nav.home': 'Accueil',
-      'nav.about': 'À propos',
-    },
-  } as const;
+  en: "English",
+  fr: "Français",
+};
+
+export const defaultLang = "en";
+
+export const ui = {
+  en: {
+    "button.readmore": "read more",
+    "text.seemore_note": "see more on note.com",
+  },
+  ja: {
+    "button.readmore": "もっと読む",
+    "text.seemore_note": "note.comでもっと見る",
+  },
+} as const;
