@@ -1,5 +1,7 @@
 ---
 import yourinfo from "../../../YOURINFO.json";
+
+import { getLangFromUrl } from "../i18n/utils";
 ---
 
 <div
@@ -8,13 +10,15 @@ import yourinfo from "../../../YOURINFO.json";
   {
     yourinfo.map(({ name, bio, icon }) => (
       <>
-      <div class="flex flex-col gap-2 items-center justify-center">
-        <img src={icon} class="w-24 h-24 rounded-full shadow-white" />
-        <h1 class="text-4xl   text-center text-white drop-shadow-lg shadow-white">
-          {name}
-        </h1>
-      </div>
-        <p class="text-2xl text-center font-noto text-white">{bio}</p>
+        <div class="flex flex-row gap-2 items-center justify-center">
+          <img src={icon} class="w-16 h-16 rounded-full shadow-white" />
+          <h1 class="text-3xl ml-2 font-mono tracking-widest text-center text-gray-600 drop-shadow-md">
+            {name}
+          </h1>
+        </div>
+        <p class="text-lg text-center font-noto mt-4 text-gray-600 drop-shadow-md">
+          {bio}
+        </p>
       </>
     ))
   }

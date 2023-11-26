@@ -41,7 +41,7 @@ async function fetchFeedItems(url) {
     return feedItems.filter(({ title, link }) => title && link);
   } catch (err) {
     console.log("failed to fetch data");
-    return [];
+    return err;
   }
 }
 

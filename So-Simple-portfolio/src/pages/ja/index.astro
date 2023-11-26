@@ -27,26 +27,25 @@ import "../../styles/main.css";
   </head>
   <body
     class="w-[100svw] h-[100svh] sm:p-4 p-2 flex flex-col justify-center items-center
-  dark:bg-slate-800 bg-slate-400 scroll-smooth"
+  dark:bg-slate-800 bg-gray-200 scroll-smooth"
   >
     <!--本体 -->
 
     <div
       id="margin"
-      class="w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-500"
+      class="w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-200 shadow-md shadow-gray-400"
     >
-      <div class="w-full h-full" id="about"><About /></div>
-      <div class="w-full h-full bg-lime-500 revealing" id="works">
+      <div class="w-full h-full bg-gray-200" id="about">
+        <About />
+      </div>
+      <div class="w-full h-full bg-gray-400 revealing" id="works">
         <Works />
       </div>
-      <div class="w-full h-full bg-gray-300 revealing" id="blogs">
-        <Blogs bgColor="gray" textColor="red" />
+      <div class="w-full h-full bg-gray-500 revealing" id="blogs">
+        <Blogs />
       </div>
-      <div class="w-full h-full bg-gray-800 revealing" id="contact">
+      <div class="w-full h-full bg-gray-600 revealing" id="contact">
         <Contact />
-      </div>
-      <div class="w-full h-full bg-gray-800 revealing" id="contact">
-        <Contact2 />
       </div>
     </div>
     <!--ナビゲーション -->
@@ -57,7 +56,7 @@ import "../../styles/main.css";
   @keyframes reveal {
     from {
       opacity: 0;
-      clip-path: circle(0%);
+      clip-path: circle(100%);
     }
     to {
       opacity: 1;

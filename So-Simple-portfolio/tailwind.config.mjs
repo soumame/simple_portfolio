@@ -10,6 +10,7 @@ export default {
         "Noto Sans Japanese",
       ],
       noto: ["Noto Sans Japanese 200"],
+      mame: ["Mamefont"],
     },
   },
   plugins: [],
