@@ -46,7 +46,7 @@ async function fetchFeedItems(url) {
 }
 
 (async function () {
-  const data = await fetchFeedItems("https://note.com/soto9/rss");
+  const data = await fetchFeedItems(process.env.BLOG_RSS_URL);
 
   if (data) {
     data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
