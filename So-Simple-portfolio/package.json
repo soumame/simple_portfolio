@@ -9,7 +9,7 @@
     "start": "astro dev",
     "build": "npm run update-rss && astro build",
     "preview": "astro preview",
-    "astro": "astro, npm run update-rss"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.3",
