@@ -1,20 +1,48 @@
 ---
-import data from "../rss/items.json";
-
+const { language } = Astro.props;
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const items = `src/rss/items${language}.json`;
+import { readFileSync } from "fs";
+import path from "path";
+// const itemsPath = path.join("../rss/", `items-${language}`, ".json");
+let data;
+try {
+  const rawData = readFileSync(items, "utf8");
+  data = JSON.parse(rawData);
+  console.log(data);
+} catch (error) {
+  console.error("Error reading the file:", error);
+  data = null;
+}
 ---
 
-<script src="https://kit.fontawesome.com/e09742380f.js" crossorigin="anonymous"
-></script>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<style>
+  .material-symbols-rounded {
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 400,
+      "GRAD" 200,
+      "opsz" 48;
+    font-size: 40px;
+  }
+</style>
+
 <div class="snap-center w-full h-full sm:p-4 p-2">
   <div class="flex md:flex-col">
     <span
-      class="fa-solid fa-comments w-8 h-8 md:w-10 md:h-10 my-2 text-gray-200 fill-gray-200"
-    ></span>
+      class="material-symbols-rounded my-2 text-5xl font-bold text-gray-800 fill-gray-800"
+    >
+      feed</span
+    >
     <div class="flex flex-row">
-      <h2 class="text-4xl md:my-2 font-mono text-gray-200">Feed</h2>
+      <h2 class="text-4xl md:my-2 font-mono text-gray-800">Note</h2>
     </div>
   </div>
 
@@ -35,7 +63,7 @@ const t = useTranslations(lang);
           <h3 class="text-2xl font-bold font-noto pt-3">{title}</h3>
           <p class="line-clamp-5 font-normal pt-2">{contentSnippet}</p>
           <a href={link}>
-            <button class="bg-gray-200 text-gray-600 border-gray-400 font-semibold border p-3 rounded-full transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
+            <button class="bg-gray-200 text-gray-600 border-gray-400 font-semibold border p-3 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
               {t("button.readmore")}
             </button>
           </a>
@@ -55,14 +83,14 @@ const t = useTranslations(lang);
     </div>
     <div class="right-2 bottom-0 flex justify-end items-end sticky gap-2">
       <button
-        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-4 border border-transparent transition duration-200 hover:border-orange-400"
+        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
         onclick="scroll(-1);"
-        ><span class="fa-solid fa-arrow-left"></span></button
+        ><span class="material-symbols-rounded"> chevron_left</span></button
       >
       <button
-        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-4 border border-transparent transition duration-200 hover:border-orange-400"
+        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
         onclick="scroll(1);"
-        ><span class="fa-solid fa-arrow-right"></span></button
+        ><span class="material-symbols-rounded"> chevron_right</span></button
       >
     </div>
   </div>

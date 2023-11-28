@@ -5,7 +5,7 @@ const path = require("path");
 require("dotenv").config();
 
 // items.jsonのパスを構築
-const itemsPath = path.join(__dirname, "items.json");
+const itemsPath = path.join(__dirname, "itemsJapanese.json");
 
 const SYSTEM_PROMPT = `Translate the following text to English`;
 const TARGET_LANGUAGE = "English";
@@ -32,8 +32,9 @@ async function translateText(text, targetLanguage) {
       max_tokens: 1000,
     });
     return response;
+    return console.log("翻訳完了！");
   } catch (error) {
-    console.error("Error in translation:", error);
+    console.error("翻訳中にエラーが発生したよ:", error);
     return text; // エラー時は元のテキストを返す
   }
 }
@@ -51,6 +52,10 @@ async function translateRSSItems(rssItems) {
     return {
       title: translatedTitle.choices[0].message.content,
       contentSnippet: translatedSnippet.choices[0].message.content,
+      link: item.link,
+      isoDate: item.isoDate,
+      og: item.og,
+      dateMiliSeconds: item.dateMiliSeconds,
     };
   });
   const translatedItems = await Promise.all(promises);
@@ -64,9 +69,6 @@ const rssItems = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
 translateRSSItems(rssItems).then((translatedItems) => {
   if (translatedItems) {
     fs.ensureDirSync(".feed");
-    fs.writeJsonSync(
-      `./src/rss/items-${TARGET_LANGUAGE}.json`,
-      translatedItems,
-    );
+    fs.writeJsonSync(`./src/rss/items${TARGET_LANGUAGE}.json`, translatedItems);
   }
 });

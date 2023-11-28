@@ -52,6 +52,6 @@ async function fetchFeedItems(url) {
     data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
 
     fs.ensureDirSync(".feed");
-    fs.writeJsonSync("./src/rss/items.json", data);
+    fs.writeJsonSync("./src/rss/itemsJapanese.json", data);
   }
 })();

@@ -6,8 +6,21 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<script src="https://kit.fontawesome.com/e09742380f.js" crossorigin="anonymous"
-></script>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<style>
+  .material-symbols-rounded {
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 400,
+      "GRAD" 200,
+      "opsz" 48;
+    font-size: 40px;
+  }
+</style>
+
 <div class="snap-center w-full h-full sm:p-4 p-2">
   <div class="flex md:flex-col">
     <span
