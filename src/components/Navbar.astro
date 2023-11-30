@@ -1,5 +1,11 @@
 ---
-import { Contact, Briefcase, StickyNote, Share2 } from "lucide-astro";
+import {
+  Contact,
+  Briefcase,
+  StickyNote,
+  Share2,
+  Languages,
+} from "lucide-astro";
 ---
 
 <nav class="m-4">
@@ -40,6 +46,16 @@ import { Contact, Briefcase, StickyNote, Share2 } from "lucide-astro";
         </button>
       </a>
     </li>
+    <li><span class="border-l-2 border-gray-400"></span></li>
+    <li>
+      <a href="" class="">
+        <button
+          class="text-orange-600 hover:bg-gray-300 transition duration-200 ease-in-out
+         rounded-2xl p-3 sm:p-4 no-underline"
+          ><Languages />
+        </button>
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -52,9 +68,8 @@ import { Contact, Briefcase, StickyNote, Share2 } from "lucide-astro";
     background-position: 50% 100%;
     background-repeat: no-repeat;
     transition:
-      background-size 0.2s ease-in-out,
-      background-color 0.15s ease-in-out;
-    background-color: transparent;
+      background-size 200ms ease-in-out,
+      background-color 200ms ease-in-out;
   }
 
   .link-underline-black {

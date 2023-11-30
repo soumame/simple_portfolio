@@ -40,7 +40,7 @@ async function fetchFeedItems(url) {
 
     return feedItems.filter(({ title, link }) => title && link);
   } catch (err) {
-    console.log("failed to fetch data from RSS feed");
+    console.log("failed to fetch data");
     return err;
   }
 }
@@ -52,6 +52,6 @@ async function fetchFeedItems(url) {
     data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
 
     fs.ensureDirSync(".feed");
-    fs.writeJsonSync("./src/rss/itemsJapanese.json", JSON.stringify(data));
+    fs.writeJsonSync("./src/rss/itemsJapanese.json", data);
   }
 })();

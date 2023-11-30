@@ -1,42 +1,25 @@
 import Parser from "rss-parser";
 import fs from "fs-extra";
-import ogs from "open-graph-scraper";
 
 const parser = new Parser();
-
-async function getOgImageURL(url) {
-  if (!url) return null;
-
-  const data = await ogs({ url });
-
-  if (data.result?.ogImage && data.result.ogImage.length > 0) {
-    return data.result.ogImage[0].url;
-  } else {
-    return null;
-  }
-}
 
 async function fetchFeedItems(url) {
   try {
     const feed = await parser.parseURL(url);
 
-    console.log(feed);
-
-    if (!feed?.channels?.length) return [];
+    if (!feed?.items?.length) return [];
 
     const feedItems = await Promise.all(
-      feed.channels.map(async ({ title, description, link, isoDate }) => {
-        const og = await getOgImageURL(link);
+      feed.items.map(async ({ description }) => {
         return {
-          title,
           description,
         };
       }),
     );
-
-    return feedItems.filter(({ title, link }) => title && link);
+    return feedItems;
   } catch (err) {
-    console.log("failed to fetch data");
+    console.log("channelの取得に失敗しました");
+    console.log("RSSのURL：", process.env.BLOG_RSS_URL);
     return err;
   }
 }
@@ -45,8 +28,8 @@ async function fetchFeedItems(url) {
   const data = await fetchFeedItems(process.env.BLOG_RSS_URL);
 
   if (data) {
-    data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
-
+    console.log("RSSのURL：", process.env.BLOG_RSS_URL);
+    console.log("出力するデータ：", data);
     fs.ensureDirSync(".feed");
     fs.writeJsonSync("./src/rss/channels.json", data);
   }
