@@ -5,6 +5,7 @@
   "scripts": {
     "update-rss": "node ./src/rss/rss-parser.mjs",
     "translate": "node ./src/rss/translator.cjs",
+    "channels": "node ./src/rss/channels.mjs",
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "npm i && npm run update-rss && astro build",

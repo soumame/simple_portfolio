@@ -22,25 +22,21 @@ async function fetchFeedItems(url) {
 
     console.log(feed);
 
-    if (!feed?.items?.length) return [];
+    if (!feed?.channels?.length) return [];
 
     const feedItems = await Promise.all(
-      feed.items.map(async ({ title, contentSnippet, link, isoDate }) => {
+      feed.channels.map(async ({ title, description, link, isoDate }) => {
         const og = await getOgImageURL(link);
         return {
           title,
-          contentSnippet: contentSnippet?.replace(/\n/g, ""),
-          link,
-          isoDate,
-          og,
-          dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
+          description,
         };
       }),
     );
 
     return feedItems.filter(({ title, link }) => title && link);
   } catch (err) {
-    console.log("failed to fetch data from RSS feed");
+    console.log("failed to fetch data");
     return err;
   }
 }
@@ -52,6 +48,6 @@ async function fetchFeedItems(url) {
     data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
 
     fs.ensureDirSync(".feed");
-    fs.writeJsonSync("./src/rss/itemsJapanese.json", JSON.stringify(data));
+    fs.writeJsonSync("./src/rss/channels.json", data);
   }
 })();
