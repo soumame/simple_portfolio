@@ -6,7 +6,7 @@
     "update-rss": "node ./src/rss/rss-parser.mjs",
     "rss-translate": "node ./src/rss/translator.cjs",
     "channels": "node ./src/rss/channels.mjs",
-    "rss": "npm run update-rss && npm run rss-translate && npm run channels",
+    "rss": "npm run update-rss && npm run rss-translate",
     "works-copy": "node ./src/works/importer.mjs",
     "works-translate": "node ./src/works/translator.cjs",
     "works": "npm run works-copy && npm run works-translate",
