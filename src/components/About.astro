@@ -1,29 +1,39 @@
 ---
-import yourinfo from "../../YOURINFO.json";
+import info from "../../YOURINFO.json";
+
+import { ChevronsDown } from "lucide-astro";
 
 import { getLangFromUrl } from "../i18n/utils";
 
-import { ChevronsDown } from 'lucide-astro'
+const lang = getLangFromUrl(Astro.url);
 
+const yourinfo = info[lang];
 ---
 
 <div
   class="snap-center w-full h-full flex justify-center items-center flex-col relative sm:p-4 p-2"
 >
   {
-    yourinfo.map(({ name, bio, icon }) => (
+    yourinfo.map(({ name, subname, bio, icon }) => (
       <>
         <div class="flex flex-row gap-2 items-center justify-center">
           <img src={icon} class="w-16 h-16 rounded-full shadow-white" />
-          <h1 class="text-3xl ml-2 font-mono tracking-widest text-center text-gray-600 drop-shadow-md">
-            {name}
-          </h1>
+          <div class="flex flex-col ml-2">
+            <h1 class="text-3xl font-mono tracking-widest text-center text-gray-600 drop-shadow-md">
+              {name}
+            </h1>
+            <p class="text-xl font-mono tracking-widest text-gray-500 drop-shadow-md">
+              {subname}
+            </p>
+          </div>
         </div>
-        <p class="text-lg text-center font-noto mt-4 text-gray-600 drop-shadow-md">
+        <p class="text-lg text-center font-light mt-4 text-gray-500 drop-shadow-md">
           {bio}
         </p>
       </>
     ))
   }
-  <ChevronsDown class="text-orange-500 w-12 h-12 absolute bottom-10 animate-pulse" />
+  <ChevronsDown
+    class="text-orange-500 w-12 h-12 absolute bottom-10 animate-pulse"
+  />
 </div>

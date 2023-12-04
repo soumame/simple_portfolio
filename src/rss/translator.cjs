@@ -5,10 +5,10 @@ const path = require("path");
 require("dotenv").config();
 
 // items.jsonのパスを構築
-const itemsPath = path.join(__dirname, "itemsJapanese.json");
+const itemsPath = path.join(__dirname, "items-ja.json");
 
-const SYSTEM_PROMPT = `Translate the following text to English`;
-const TARGET_LANGUAGE = "English";
+const TARGET_LANGUAGE = "en";
+const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}`;
 
 // OpenAI API キーの設
 const openai = new OpenAI({
@@ -69,6 +69,9 @@ const rssItems = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
 translateRSSItems(rssItems).then((translatedItems) => {
   if (translatedItems) {
     fs.ensureDirSync(".feed");
-    fs.writeJsonSync(`./src/rss/items${TARGET_LANGUAGE}.json`, translatedItems);
+    fs.writeJsonSync(
+      `./src/rss/items-${TARGET_LANGUAGE}.json`,
+      translatedItems,
+    );
   }
 });

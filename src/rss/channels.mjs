@@ -10,7 +10,7 @@ async function fetchFeedItems(url) {
     if (!feed?.items?.length) return [];
 
     const feedItems = await Promise.all(
-      feed.items.map(async ({ description }) => {
+      feed.items.foreach(async ({ description }) => {
         return {
           description,
         };

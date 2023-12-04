@@ -1,4 +1,6 @@
 ---
+import Menutips from "./parts/Menutips.jsx";
+import LanguagePicker from "./parts/Language.jsx";
 import {
   Contact,
   Briefcase,
@@ -12,74 +14,28 @@ import {
   <ul class="flex gap-1 sm:gap-4 items-center justify-center">
     <li>
       <a href="#about" class="">
-        <button
-          class="bg-transparent text-gray-600 link link-underline link-underline-black
-         rounded-2xl p-3 sm:p-4 no-underline"
-          ><Contact />
-        </button>
+        <Menutips icon="Contact" text="About" client:load />
       </a>
     </li>
     <li>
       <a href="#works" class="">
-        <button
-          class="bg-transparent text-gray-600 link link-underline link-underline-black
-           rounded-2xl p-3 sm:p-4 no-underline"
-          ><Briefcase />
-        </button>
+        <Menutips icon="Briefcase" text="Works" client:load />
       </a>
     </li>
     <li>
       <a href="#blogs" class="">
-        <button
-          class="bg-transparent text-gray-600 link link-underline link-underline-black
-         rounded-2xl p-3 sm:p-4 no-underline"
-          ><StickyNote />
-        </button>
+        <Menutips icon="StickyNote" text="Notes" client:load />
       </a>
     </li>
     <li>
       <a href="#contact" class="">
-        <button
-          class="bg-transparent text-gray-600 link link-underline link-underline-black
-         rounded-2xl p-3 sm:p-4 no-underline"
-          ><Share2 />
-        </button>
+        <Menutips icon="Share2" text="Connect" client:load />
       </a>
     </li>
     <li><span class="border-l-2 border-gray-400"></span></li>
+
     <li>
-      <a href="" class="">
-        <button
-          class="text-orange-600 hover:bg-gray-300 transition duration-200 ease-in-out
-         rounded-2xl p-3 sm:p-4 no-underline"
-          ><Languages />
-        </button>
-      </a>
+      <LanguagePicker client:load />
     </li>
   </ul>
 </nav>
-
-<style>
-  .link-underline {
-    border-bottom-width: 0;
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#fff, #fff);
-    background-size: 0 1px;
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    transition:
-      background-size 200ms ease-in-out,
-      background-color 200ms ease-in-out;
-  }
-
-  .link-underline-black {
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(orange, orange);
-  }
-
-  .link-underline:hover {
-    background-size: 100% 2px;
-    background-position: 50% 100%;
-    background-color: #d1d5db;
-  }
-</style>
