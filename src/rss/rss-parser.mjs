@@ -1,6 +1,7 @@
 import Parser from "rss-parser";
 import fs from "fs-extra";
 import ogs from "open-graph-scraper";
+import { red } from "kolorist";
 
 const parser = new Parser();
 
@@ -40,7 +41,7 @@ async function fetchFeedItems(url) {
 
     return feedItems.filter(({ title, link }) => title && link);
   } catch (err) {
-    console.log("failed to fetch data");
+    console.log(red("RSSの抽出に失敗しました"));
     return err;
   }
 }

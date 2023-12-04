@@ -18,7 +18,8 @@ const LanguagePicker = () => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="min-w-[220px] bg-gray-200 rounded-2xl p-[5px] shadow-md will-change-[opacity,transform] data-[side=top]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+          side="top"
+          className="min-w-[220px] bg-gray-200 rounded-2xl p-[5px] shadow-md will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
           sideOffset={5}
         >
           {Object.entries(languages).map(([lang, label]) => (
@@ -37,15 +38,3 @@ const LanguagePicker = () => {
   );
 };
 export default LanguagePicker;
-
-const Menutips = () => {
-  return (
-    <ul>
-      {Object.entries(languages).map(([lang, label]) => (
-        <li>
-          <a href={`/${lang}/`}>{label}</a>
-        </li>
-      ))}
-    </ul>
-  );
-};

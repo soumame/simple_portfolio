@@ -4,11 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "update-rss": "node ./src/rss/rss-parser.mjs",
-    "translate": "node ./src/rss/translator.cjs",
+    "rss-translate": "node ./src/rss/translator.cjs",
     "channels": "node ./src/rss/channels.mjs",
+    "rss": "npm run update-rss && npm run rss-translate && npm run channels",
+    "works-copy": "node ./src/works/importer.mjs",
+    "works-translate": "node ./src/works/translator.cjs",
+    "works": "npm run works-copy && npm run works-translate",
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "npm i && npm run update-rss && astro build",
+    "build": "npm i && npm run update-rss && npmr astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -38,6 +42,7 @@
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
+    "kolorist": "^1.8.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.1"
   }

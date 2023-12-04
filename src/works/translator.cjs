@@ -10,7 +10,7 @@ const itemsPath = path.join(__dirname, "items-ja.json");
 const TARGET_LANGUAGE = "en";
 const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}`;
 
-// OpenAI API キーの設
+// OpenAI API キーの設定
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -34,7 +34,7 @@ async function translateText(text, targetLanguage) {
     console.log("翻訳中...");
     return response;
   } catch (error) {
-    console.error("翻訳中にエラーが発生しました:", error);
+    console.error("翻訳中にエラーが発生したよ:", error);
     return text; // エラー時は元のテキストを返す
   }
 }
@@ -42,20 +42,18 @@ async function translateText(text, targetLanguage) {
 // RSSフィードから記事を読み込み、翻訳する例
 async function translateRSSItems(rssItems) {
   const promises = rssItems.map(async (item) => {
-    console.log(item.title, item.contentSnippet);
-    const translatedTitle = await translateText(item.title, TARGET_LANGUAGE);
+    console.log(item.Title, item.description);
+    const translatedTitle = await translateText(item.Title, TARGET_LANGUAGE);
     const translatedSnippet = await translateText(
-      item.contentSnippet,
+      item.description,
       TARGET_LANGUAGE,
     );
 
     return {
-      title: translatedTitle.choices[0].message.content,
-      contentSnippet: translatedSnippet.choices[0].message.content,
+      Title: translatedTitle.choices[0].message.content,
+      image: item.image,
+      description: translatedSnippet.choices[0].message.content,
       link: item.link,
-      isoDate: item.isoDate,
-      og: item.og,
-      dateMiliSeconds: item.dateMiliSeconds,
     };
   });
   const translatedItems = await Promise.all(promises);
@@ -70,7 +68,7 @@ translateRSSItems(rssItems).then((translatedItems) => {
   if (translatedItems) {
     fs.ensureDirSync(".feed");
     fs.writeJsonSync(
-      `./src/rss/items-${TARGET_LANGUAGE}.json`,
+      `./src/works/items-${TARGET_LANGUAGE}.json`,
       translatedItems,
     );
   }
