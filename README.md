@@ -36,9 +36,9 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 
 デプロイするときに作成されたGitリポジトリで、以下のファイルを編集してください。詳細は後述するのでそちらを参照してください。
 
-YOURINFO.json - 自己紹介ページの内容を変更
-WORKS.json - Worksページの内容を変更
-YourSNS.json - Contactページの内容を変更
+- YOURINFO.json - 自己紹介ページの内容を変更
+- WORKS.json - Worksページの内容を変更
+- YourSNS.json - Contactページの内容を変更
 
 内容を保存してプッシュすれば完成です。
 
@@ -94,11 +94,11 @@ JSONで出力ができるものであれば、CMSに接続することも可能�
 
 #### note(RSS)の設定方法
 
-    デプロイ時に設定する環境変数(Environment Variable)に、`BLOG_RSS_URL` を設定し、noteのURLの末尾に`/rss`を追加したものを入力してください。例えば、`https://note.com/yourname`の場合、`https://note.com/yourname/rss`となります。Vercelを通してデプロイする際は、Vercelのダッシュボードから設定することができます。
+デプロイ時に設定する環境変数(Environment Variable)に、`BLOG_RSS_URL` を設定し、noteのURLの末尾に`/rss`を追加したものを入力してください。例えば、`https://note.com/yourname`の場合、`https://note.com/yourname/rss`となります。Vercelを通してデプロイする際は、Vercelのダッシュボードから設定することができます。
 
-    特に設定を変更しなければ、RSSの内容はrss-parserを使用して、src/rss/にitems-ja.jsonとしてビルド時にコピーされ、GPT3.5を使用して英語(items-en.json)に翻訳されます。
+特に設定を変更しなければ、RSSの内容はrss-parserを使用して、src/rss/にitems-ja.jsonとしてビルド時にコピーされ、GPT3.5を使用して英語(items-en.json)に翻訳されます。
 
-    また、RSSを使用して取得しているので、note以外のサービスでも使用できます。取得するRSSに合わせて、取得する内容を`So-Simple-portfolio/src/components/Blogs.astro`で変更してください。（note以外のRSSでは動作未確認です。）
+また、RSSを使用して取得しているので、note以外のサービスでも使用できます。取得するRSSに合わせて、取得する内容を`So-Simple-portfolio/src/components/Blogs.astro`で変更してください。（note以外のRSSでは動作未確認です。）
 
 #### Contact の追加方法
 
