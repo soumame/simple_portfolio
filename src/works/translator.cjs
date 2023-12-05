@@ -23,7 +23,7 @@ async function translateText(text, targetLanguage) {
         { role: "system", content: SYSTEM_PROMPT },
         {
           role: "user",
-          content: `text to convert to ${targetLanguage}: ${text}`,
+          content: `convert text to ${targetLanguage}: ${text}`,
         },
       ],
 
@@ -31,7 +31,7 @@ async function translateText(text, targetLanguage) {
       temperature: 0.7,
       max_tokens: 1000,
     });
-    console.log("翻訳中...");
+    console.log(`worksの内容(${text})を翻訳中...`);
     return response;
   } catch (error) {
     console.error("翻訳中にエラーが発生したよ:", error);
@@ -41,23 +41,36 @@ async function translateText(text, targetLanguage) {
 
 // RSSフィードから記事を読み込み、翻訳する例
 async function translateRSSItems(rssItems) {
-  const promises = rssItems.map(async (item) => {
-    console.log(item.Title, item.description);
-    const translatedTitle = await translateText(item.Title, TARGET_LANGUAGE);
-    const translatedSnippet = await translateText(
-      item.description,
-      TARGET_LANGUAGE,
+  const batchSize = 3; // 一度に処理するアイテムの数
+  let result = [];
+
+  for (let i = 0; i < rssItems.length; i += batchSize) {
+    const batch = rssItems.slice(i, i + batchSize);
+
+    const translatedBatch = await Promise.all(
+      batch.map(async (item) => {
+        const translatedTitle = await translateText(
+          item.Title,
+          TARGET_LANGUAGE,
+        );
+        const translatedSnippet = await translateText(
+          item.description,
+          TARGET_LANGUAGE,
+        );
+
+        return {
+          Title: translatedTitle.choices[0].message.content,
+          image: item.image,
+          description: translatedSnippet.choices[0].message.content,
+          link: item.link,
+        };
+      }),
     );
 
-    return {
-      Title: translatedTitle.choices[0].message.content,
-      image: item.image,
-      description: translatedSnippet.choices[0].message.content,
-      link: item.link,
-    };
-  });
-  const translatedItems = await Promise.all(promises);
-  return translatedItems;
+    result = result.concat(translatedBatch);
+  }
+
+  return result;
 }
 
 // 例: RSSフィードデータ

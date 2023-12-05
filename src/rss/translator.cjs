@@ -23,7 +23,7 @@ async function translateText(text, targetLanguage) {
         { role: "system", content: SYSTEM_PROMPT },
         {
           role: "user",
-          content: `text to convert to ${targetLanguage}: ${text}`,
+          content: `convert text to ${targetLanguage}: ${text}`,
         },
       ],
 
@@ -31,7 +31,7 @@ async function translateText(text, targetLanguage) {
       temperature: 0.7,
       max_tokens: 1000,
     });
-    console.log("翻訳中...");
+    console.log(`rssの内容${text}を翻訳中...`);
     return response;
   } catch (error) {
     console.error("翻訳中にエラーが発生しました:", error);
@@ -41,25 +41,37 @@ async function translateText(text, targetLanguage) {
 
 // RSSフィードから記事を読み込み、翻訳する例
 async function translateRSSItems(rssItems) {
-  const promises = rssItems.map(async (item) => {
-    console.log(item.title, item.contentSnippet);
-    const translatedTitle = await translateText(item.title, TARGET_LANGUAGE);
-    const translatedSnippet = await translateText(
-      item.contentSnippet,
-      TARGET_LANGUAGE,
+  const batchSize = 3; // 一度に処理するアイテムの数
+  let result = [];
+
+  for (let i = 0; i < rssItems.length; i += batchSize) {
+    const batch = rssItems.slice(i, i + batchSize);
+    const translatedBatch = await Promise.all(
+      batch.map(async (item) => {
+        const translatedTitle = await translateText(
+          item.title,
+          TARGET_LANGUAGE,
+        );
+        const translatedSnippet = await translateText(
+          item.contentSnippet,
+          TARGET_LANGUAGE,
+        );
+
+        return {
+          title: translatedTitle.choices[0].message.content,
+          contentSnippet: translatedSnippet.choices[0].message.content,
+          link: item.link,
+          isoDate: item.isoDate,
+          og: item.og,
+          dateMiliSeconds: item.dateMiliSeconds,
+        };
+      }),
     );
 
-    return {
-      title: translatedTitle.choices[0].message.content,
-      contentSnippet: translatedSnippet.choices[0].message.content,
-      link: item.link,
-      isoDate: item.isoDate,
-      og: item.og,
-      dateMiliSeconds: item.dateMiliSeconds,
-    };
-  });
-  const translatedItems = await Promise.all(promises);
-  return translatedItems;
+    result = [...result, ...translatedBatch];
+  }
+
+  return result;
 }
 
 // 例: RSSフィードデータ
