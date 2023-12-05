@@ -12,7 +12,7 @@
     "works": "npm run works-copy && npm run works-translate",
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "npm i && npm run rss && npm run works && npm astro build",
+    "build": "npm i && npm run rss && npm run works && npm run astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
