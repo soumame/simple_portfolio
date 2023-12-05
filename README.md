@@ -42,7 +42,11 @@ YourSNS.json - Contactページの内容を変更
 
 内容を保存してプッシュすれば完成です。
 
-### 名前、bio 、プロフィール画像を変更する方法
+### 3. 各種設定
+
+カスタマイズをしたい場合や、詳細な設定をしたい場合は、以下の手順を参照してください。
+
+#### 名前、bio 、プロフィール画像を変更する方法
 
     YOURINFO.json を編集してください。以下はYOURINFO.jsonのテンプレートです。
 
@@ -69,7 +73,7 @@ YourSNS.json - Contactページの内容を変更
 
 特に設定を変更しなければ、YOURINFO.jsonのファイルはsrc/components/About.astroに読みこまれます。
 
-### Works にあなたの作品を追加方法
+#### Works にあなたの作品や経歴を追加する方法
 
     WORKS.json を編集してください。以下はWORKS.jsonのテンプレートです。
 
@@ -88,7 +92,7 @@ YourSNS.json - Contactページの内容を変更
 
 JSONで出力ができるものであれば、CMSに接続することも可能です。例えば、[Contentful](https://www.contentful.com/) などに接続して、インターネット上からjson管理することも可能です。
 
-### note(RSS)の設定方法
+#### note(RSS)の設定方法
 
     デプロイ時に設定する環境変数(Environment Variable)に、`BLOG_RSS_URL` を設定し、noteのURLの末尾に`/rss`を追加したものを入力してください。例えば、`https://note.com/yourname`の場合、`https://note.com/yourname/rss`となります。Vercelを通してデプロイする際は、Vercelのダッシュボードから設定することができます。
 
@@ -96,7 +100,7 @@ JSONで出力ができるものであれば、CMSに接続することも可能�
 
     また、RSSを使用して取得しているので、note以外のサービスでも使用できます。取得するRSSに合わせて、取得する内容を`So-Simple-portfolio/src/components/Blogs.astro`で変更してください。（note以外のRSSでは動作未確認です。）
 
-### Contact の追加方法
+#### Contact の追加方法
 
     YourSNS.json を編集してください。８件以上リンクを追加するとレイアウトが崩れる恐れがあります。
 
