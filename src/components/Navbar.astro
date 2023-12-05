@@ -1,6 +1,8 @@
 ---
 import Menutips from "./parts/Menutips.jsx";
 import LanguagePicker from "./parts/Language.jsx";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 import {
   Contact,
   Briefcase,
@@ -13,22 +15,22 @@ import {
 <nav class="m-4">
   <ul class="flex gap-1 sm:gap-4 items-center justify-center">
     <li>
-      <a href="#about" class="">
+      <a href=`/${lang}/#about` class="">
         <Menutips icon="Contact" text="About" client:load />
       </a>
     </li>
     <li>
-      <a href="#works" class="">
+      <a href=`/${lang}/#works` class="">
         <Menutips icon="Briefcase" text="Works" client:load />
       </a>
     </li>
     <li>
-      <a href="#blogs" class="">
+      <a href=`/${lang}/#blogs` class="">
         <Menutips icon="StickyNote" text="Notes" client:load />
       </a>
     </li>
     <li>
-      <a href="#contact" class="">
+      <a href=`/${lang}/#contact` class="">
         <Menutips icon="Share2" text="Connect" client:load />
       </a>
     </li>

@@ -1,0 +1,76 @@
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Noto+Sans+JP:wght@200;400;700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="w-[100svw] h-[100svh] p-4 flex flex-col justify-center items-center
+   bg-gray-200 scroll-smooth"
+  >
+    <!--本体 -->
+
+    <div
+      id="margin"
+      class="w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-200 shadow-md shadow-gray-400"
+    >
+      <div
+        class="w-full h-full flex flex-col justify-center items-center bg-gray-200"
+        id="about"
+      >
+        <h1 class="text-gray-700 text-3xl font-mono font-bold">Error 404 😭</h1>
+      </div>
+    </div>
+    <!--ナビゲーション -->
+    <Navbar />
+  </body>
+</html>
+<style>
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      clip-path: circle(100%);
+    }
+    to {
+      opacity: 1;
+      clip-path: circle(100%);
+    }
+  }
+
+  .revealing {
+    /* Create View Timeline */
+    view-timeline-name: --revealing;
+    view-timeline-axis: block;
+
+    /* Attach animation, linked to the  View Timeline */
+    animation: linear reveal both;
+    animation-timeline: --revealing;
+
+    /* Tweak range when effect should run*/
+    animation-range: entry 45% cover 50%;
+  }
+
+  @keyframes shrink {
+    from {
+      max-width: 100rem;
+      max-height: 100rem;
+    }
+    to {
+      max-width: 36rem /* 576px */;
+      max-height: 48rem /* 768px */;
+    }
+  }
+</style>
