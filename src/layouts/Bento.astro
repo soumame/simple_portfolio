@@ -1,0 +1,18 @@
+---
+import About from "../components/About.astro";
+import Blogs from "../components/Blogs.astro";
+import Contact from "../components/Contact.astro";
+import Navbar from "../components/Navbar.astro";
+import Works from "../components/Works.astro";
+---
+
+<body class="w-screen h-screen">
+  <div class="grid md:grid-cols-2 grid-cols-1 bg-gray-200">
+    <About />
+    <Contact />
+    <div class="grid lg:grid-cols-2 grid-cols-1">
+      <Blogs />
+      <Works />
+    </div>
+  </div>
+</body>

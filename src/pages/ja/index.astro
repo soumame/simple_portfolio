@@ -1,15 +1,13 @@
 ---
 import About from "../../components/About.astro";
 import Works from "../../components/Works.astro";
-import Works2 from "../../components/Works.astro";
-
 import Blogs from "../../components/Blogs.astro";
 import Contact from "../../components/Contact.astro";
 import Navbar from "../../components/Navbar.astro";
 import "../../styles/main.css";
 ---
 
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -25,14 +23,14 @@ import "../../styles/main.css";
     />
   </head>
   <body
-    class="w-[100svw] h-[100svh] p-4 flex flex-col justify-center items-center
-   bg-gray-200 scroll-smooth"
+    class="w-[100svw] h-[100svh] p-2 md:p-4 flex flex-col justify-center items-center
+   bg-gray-200 scroll-smooth all-revealing"
   >
     <!--本体 -->
 
     <div
       id="margin"
-      class="w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-200 shadow-md shadow-gray-400"
+      class="all-revealing w-full grow overflow-scroll rounded-3xl overscroll-contain snap-y snap-mandatory sm:max-w-[36rem] sm:max-h-[48rem] bg-gray-200 shadow-md shadow-gray-400"
     >
       <div class="w-full h-full bg-gray-200" id="about">
         <About />
@@ -40,7 +38,7 @@ import "../../styles/main.css";
       <div class="w-full h-full bg-gray-300 revealing" id="works">
         <Works />
       </div>
-      <div class="w-full h-full bg-gray-300 revealing" id="blogs">
+      <div class="w-full h-full bg-gray-200 revealing" id="blogs">
         <Blogs language="Japanese" />
       </div>
       <div class="w-full h-full bg-gray-600 revealing" id="contact">

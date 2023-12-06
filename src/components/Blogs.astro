@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -21,53 +22,61 @@ import { ChevronLeft, ChevronRight, StickyNote, Search } from "lucide-astro";
 ---
 
 <div class="snap-center w-full h-full py-4 px-2 md:px-4">
-  <div class="flex md:flex-col">
-    <StickyNote class="h-10 w-10" />
-    <div class="flex flex-row">
-      <h2 class="text-4xl md:my-2 font-mono text-gray-800">Note</h2>
-    </div>
-  </div>
-
-  <div
-    id="scrollContainer"
-    class="mt-4 min-h-[70%] flex flex-row overflow-x-scroll flex-nowrap gap-2 snap-x snap-mandatory py-3 relative font-noto"
-  >
-    {
-      data.slice(0, 6).map(({ title, contentSnippet, og, link }) => (
-        <div
-          class={`w-[90%] md:w-[70%] h-full flex-shrink-0 bg-gray-200 rounded-3xl p-3 snap-start shadow-md`}
-        >
-          <img
-            src={og}
-            alt=""
-            class="saturate-100 aspect-auto w-[100%] rounded-3xl"
-          />
-          <h3 class="text-2xl font-bold font-noto pt-3">{title}</h3>
-          <p class="line-clamp-5 font-normal pt-2">{contentSnippet}</p>
-          <a href={link}>
-            <button class="bg-gray-200 text-gray-600 border-gray-400 font-semibold border p-3 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
-              {t("button.readmore")}
-            </button>
-          </a>
+  <div class="flex flex-col justify-center items-center">
+    <div class="flex justify-between w-full">
+      <div class="flex md:flex-col">
+        <StickyNote class="h-10 w-10" />
+        <div class="flex flex-row">
+          <h2 class="text-4xl md:my-2 font-mono text-gray-800">Note</h2>
         </div>
-      ))
-    }
-    <div
-      class={`flex flex-col justify-center flex-shrink-0 items-center w-[70%] h-full snap-start rounded-3xl p-3 shadow-md bg-gray-200 `}
-    >
-      <Search class="md:my-2 w-10 h-10" />
-      <p>{t("text.seemore_note")}</p>
-      <span class="fa-solid fa-arrow-right w-8 h-8"></span>
+      </div>
+      <div>
+        <a>
+          <button
+            class="bg-gray-200 text-gray-600 border-gray-400 text-sm font-semibold border p-1.5 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4"
+          >
+            {t("text.seemore_note")}
+          </button>
+        </a>
+      </div>
     </div>
-    <div class="right-2 bottom-0 flex justify-end items-end sticky gap-2">
-      <button
-        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
-        onclick="scroll(-1);"><ChevronLeft class="h-8 w-8" /></button
-      >
-      <button
-        class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
-        onclick="scroll(1);"><ChevronRight class="h-8 w-8" /></button
-      >
+
+    <div
+      id="scrollContainer"
+      class="mt-4 grid grid-rows-3 overflow-x-scroll gap-2 py-3 relative font-noto"
+    >
+      {
+        data.slice(0, 3).map(({ title, contentSnippet, og, link }) => (
+          <div class="row-span-1 flex bg-gray-200 rounded-3xl p-2 snap-start shadow-md">
+            <div class="grow">
+              <h3 class="text-lg font-bold font-noto pt-2">{title}</h3>
+              <p class="line-clamp-2 font-sm pt-2">{contentSnippet}</p>
+              <a href={link}>
+                <button class="bg-gray-200 text-gray-600 border-gray-400 text-sm border p-2 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
+                  {t("button.readmore")}
+                </button>
+              </a>
+            </div>
+            <div class="shrink">
+              <img
+                src={og}
+                alt=""
+                class="saturate-100 aspect-auto rounded-3xl"
+              />
+            </div>
+          </div>
+        ))
+      }
+      <div class="right-2 bottom-0 flex justify-end items-end sticky gap-2">
+        <button
+          class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
+          onclick="scroll(-1);"><ChevronLeft class="h-8 w-8" /></button
+        >
+        <button
+          class="bg-gray-400/60 backdrop-blur-sm text-white rounded-full p-1.5 flex items-center justify-center border border-transparent transition duration-200 hover:border-orange-400"
+          onclick="scroll(1);"><ChevronRight class="h-8 w-8" /></button
+        >
+      </div>
     </div>
   </div>
 </div>
