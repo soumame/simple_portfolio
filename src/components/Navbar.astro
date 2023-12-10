@@ -3,41 +3,38 @@ import Menutips from "./parts/Menutips.jsx";
 import LanguagePicker from "./parts/Language.jsx";
 import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
-import {
-  Contact,
-  Briefcase,
-  StickyNote,
-  Share2,
-  Languages,
-} from "lucide-astro";
 ---
 
-<nav class="m-4">
-  <ul class="flex gap-1 sm:gap-4 items-center justify-center">
-    <li>
-      <a href=`/${lang}/#about` class="">
-        <Menutips icon="Contact" text="About" client:load />
-      </a>
-    </li>
-    <li>
-      <a href=`/${lang}/#works` class="">
-        <Menutips icon="Briefcase" text="Works" client:load />
-      </a>
-    </li>
-    <li>
-      <a href=`/${lang}/#blogs` class="">
-        <Menutips icon="StickyNote" text="Notes" client:load />
-      </a>
-    </li>
-    <li>
-      <a href=`/${lang}/#contact` class="">
-        <Menutips icon="Share2" text="Connect" client:load />
-      </a>
-    </li>
-    <li><span class="border-l-2 border-gray-400"></span></li>
+<div
+  class="w-full flex flex-wrap justify-center items-center absolute bottom-16 mt-10"
+>
+  <nav class="m-4 bg-gray-400/30 backdrop-blur-md fixed rounded-3xl z-50">
+    <ul class="flex gap-1.5 sm:gap-4 items-center justify-center">
+      <li>
+        <a href=`/${lang}/#about` class="">
+          <Menutips icon="Contact" text="About" client:load />
+        </a>
+      </li>
+      <li>
+        <a href=`/${lang}/#works` class="">
+          <Menutips icon="Briefcase" text="Timeline" client:load />
+        </a>
+      </li>
+      <li>
+        <a href=`/${lang}/#blogs` class="">
+          <Menutips icon="StickyNote" text="Notes" client:load />
+        </a>
+      </li>
+      <li>
+        <a href=`/${lang}/#contact` class="">
+          <Menutips icon="Share2" text="Connect" client:load />
+        </a>
+      </li>
+      <li><span class="border-l-2 border-gray-400"></span></li>
 
-    <li>
-      <LanguagePicker client:load />
-    </li>
-  </ul>
-</nav>
+      <li>
+        <LanguagePicker client:load />
+      </li>
+    </ul>
+  </nav>
+</div>

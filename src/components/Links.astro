@@ -1,0 +1,7 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+
+const { numberOfPosts } = Astro.props;
+import links from `../Links/items-${lang}.json`;
+---

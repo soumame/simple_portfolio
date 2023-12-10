@@ -50,7 +50,7 @@ async function translateRSSItems(rssItems) {
     const translatedBatch = await Promise.all(
       batch.map(async (item) => {
         const translatedTitle = await translateText(
-          item.Title,
+          item.title,
           TARGET_LANGUAGE,
         );
         const translatedSnippet = await translateText(
@@ -59,7 +59,7 @@ async function translateRSSItems(rssItems) {
         );
 
         return {
-          Title: translatedTitle.choices[0].message.content,
+          title: translatedTitle.choices[0].message.content,
           image: item.image,
           description: translatedSnippet.choices[0].message.content,
           link: item.link,
@@ -81,7 +81,7 @@ translateRSSItems(rssItems).then((translatedItems) => {
   if (translatedItems) {
     fs.ensureDirSync(".feed");
     fs.writeJsonSync(
-      `./src/works/items-${TARGET_LANGUAGE}.json`,
+      `./src/timeline/items-${TARGET_LANGUAGE}.json`,
       translatedItems,
     );
   }

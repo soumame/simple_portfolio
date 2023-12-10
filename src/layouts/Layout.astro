@@ -1,0 +1,28 @@
+---
+import About from "../components/About.astro";
+import Blogs from "../components/Blogs.astro";
+import Contact from "../components/Contact.astro";
+import Navbar from "../components/Navbar.astro";
+import Timeline from "../components/Timeline.astro";
+import Who from "../components/Who.astro";
+---
+
+<body class="w-screen h-screen">
+  <div
+    class="h-full grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 bg-gray-200 overflow-y-auto md:overflow-visible"
+  >
+    <div class="flex justify-center items-center md:min-h-0 min-h-screen">
+      <div>
+        <About />
+        <Contact />
+      </div>
+    </div>
+
+    <div class="md:overflow-scroll flex flex-col">
+      <Who />
+      <Blogs />
+      <Timeline />
+    </div>
+  </div>
+  <Navbar />
+</body>

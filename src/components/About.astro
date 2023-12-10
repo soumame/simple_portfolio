@@ -11,7 +11,7 @@ const yourinfo = info[lang];
 ---
 
 <div
-  class="snap-center w-full h-full flex justify-center items-center flex-col relative sm:p-4 p-2"
+  class="snap-center flex justify-center items-center flex-col relative sm:p-4 p-2 max-w-lg"
 >
   {
     yourinfo.map(({ name, subname, bio, icon }) => (
@@ -33,7 +33,4 @@ const yourinfo = info[lang];
       </>
     ))
   }
-  <ChevronsDown
-    class="text-orange-500 w-12 h-12 absolute bottom-10 animate-pulse"
-  />
 </div>

@@ -1,32 +1,37 @@
 [
   {
-    "label": "X (Twitter)",
-    "link": "https://twitter.com/so_to9",
-    "icon": "fa-brands fa-x-twitter"
+    "title": "Twitter",
+    "lucideIcon": "Twitter",
+    "link": "https://twitter.com/so_to9"
   },
   {
-    "label": "X (Twitter)",
-    "link": "https://twitter.com/so_to9",
-    "icon": "fa-brands fa-x-twitter"
+    "title": "Instagram",
+    "lucideIcon": "Instagram",
+    "link": "https://www.instagram.com/so_toku/"
   },
   {
-    "label": "X (Twitter)",
-    "link": "https://twitter.com/so_to9",
-    "icon": "fa-brands fa-x-twitter"
+    "title": "Github",
+    "lucideIcon": "Github",
+    "link": "aaa"
   },
   {
-    "label": "X (Twitter)",
-    "link": "https://twitter.com/so_to9",
-    "icon": "fa-brands fa-x-twitter"
+    "title": "Email",
+    "lucideIcon": "Mail",
+    "link": "mailto:"
   },
   {
-    "label": "X (Twitter)",
-    "link": "https://twitter.com/so_to9",
-    "icon": "fa-brands fa-x-twitter"
+    "title": "Buy me a coffee",
+    "lucideIcon": "Coffee",
+    "link": "https://www.buymeacoffee.com/So_to9"
   },
   {
-    "label": "Instagram",
-    "link": "https://instagram.com/so_toku",
-    "icon": "fa-brands fa-instagram"
+    "title": "Youtube",
+    "lucideIcon": "Youtube",
+    "link": "https://www.youtube.com/channel/UC9Z5QX8Y8zqXQlXQZJ8ZJ8w"
+  },
+  {
+    "title": "Bitcoin",
+    "lucideIcon": "Bitcoin",
+    "link": "http"
   }
 ]

@@ -1,13 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const items = `src/rss/items-${lang}.json`;
+const items = `src/timeline/items-${lang}.json`;
 import { readFileSync } from "fs";
 import path from "path";
-// const itemsPath = path.join("../rss/", `items-${language}`, ".json");
 let data;
 try {
   const rawData = readFileSync(items, "utf8");
@@ -18,22 +16,26 @@ try {
   data = null;
 }
 
-import { ChevronLeft, ChevronRight, StickyNote, Search } from "lucide-astro";
-
-const blogURL = process.env.BLOG_RSS_URL;
+import {
+  ChevronLeft,
+  ChevronRight,
+  StickyNote,
+  Search,
+  Briefcase,
+} from "lucide-astro";
 ---
 
-<div class="snap-center w-full py-4 px-2 md:px-4">
+<div class="snap-center w-full h-full py-4 px-2 md:px-4">
   <div class="flex flex-col justify-center items-center">
     <div class="flex justify-between w-full">
       <div class="flex md:flex-col">
-        <StickyNote class="h-10 w-10" />
+        <Briefcase class="h-10 w-10" />
         <div class="flex flex-row">
-          <h2 class="text-4xl md:my-2 font-mono text-gray-800">Note</h2>
+          <h2 class="text-4xl md:my-2 font-mono text-gray-800">Timeline</h2>
         </div>
       </div>
       <div>
-        <a href=`${blogURL}` class="">
+        <a>
           <button
             class="bg-gray-200 text-gray-600 border-gray-400 text-sm font-semibold border p-1.5 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4"
           >
@@ -43,22 +45,26 @@ const blogURL = process.env.BLOG_RSS_URL;
       </div>
     </div>
 
-    <div id="scrollContainer" class="mt-4 py-3 relative font-noto">
+    <div
+      id="scrollContainer"
+      class="mt-4 grid grid-rows-3 overflow-x-scroll gap-2 py-3 relative font-noto"
+    >
       {
-        data.slice(0, 10).map(({ title, contentSnippet, og, link }) => (
-          <div class="row-span-1 mt-2 flex bg-gray-200 rounded-3xl p-2 md:p-4 snap-start shadow-md">
+        data.slice(0, 6).map(({ date, title, image, description, link }) => (
+          <div class="row-span-1 flex bg-gray-200 rounded-3xl p-2 snap-start shadow-md">
             <div class="md:w-[60%] w-[50%]">
+              <p class="text-gray-600 text-sm">{date}</p>
               <h3 class="text-lg font-bold font-noto pt-2">{title}</h3>
-              <p class="line-clamp-2 font-sm pt-2">{contentSnippet}</p>
+              <p class="line-clamp-2 font-sm pt-2">{description}</p>
               <a href={link}>
-                <button class="bg-gray-200 text-gray-600 border-gray-400 text-sm border p-2 rounded-xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
+                <button class="bg-gray-200 text-gray-600 border-gray-400 text-sm border p-2 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
                   {t("button.readmore")}
                 </button>
               </a>
             </div>
             <div class="ml-2 md:w-[40%] w-[50%] flex justify-center items-center">
               <img
-                src={og}
+                src={image}
                 alt=""
                 class="saturate-100 aspect-auto rounded-2xl"
               />

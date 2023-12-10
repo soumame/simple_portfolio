@@ -37,7 +37,7 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 デプロイするときに作成されたGitリポジトリで、以下のファイルを編集してください。詳細は後述するのでそちらを参照してください。
 
 - YOURINFO.json - 自己紹介ページの内容を変更
-- WORKS.json - Worksページの内容を変更
+- TIMELINE.json - Worksページの内容を変更
 - YourSNS.json - Contactページの内容を変更
 
 内容を保存してプッシュすれば完成です。
@@ -75,7 +75,7 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 
 #### Works にあなたの作品や経歴を追加する方法
 
-    WORKS.json を編集してください。以下はWORKS.jsonのテンプレートです。
+    TIMELINE.json を編集してください。以下はTIMELINE.jsonのテンプレートです。
 
 ```json
 [
@@ -88,7 +88,7 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 ]
 ```
 
-特に設定を変更しなければ、works.jsonのファイルはsrc/works/にitems-ja.jsonとしてビルド時にコピーされ、GPT3.5を使用して英語に翻訳されます。
+特に設定を変更しなければ、works.jsonのファイルはsrc/timeline/にitems-ja.jsonとしてビルド時にコピーされ、GPT3.5を使用して英語に翻訳されます。
 
 JSONで出力ができるものであれば、CMSに接続することも可能です。例えば、[Contentful](https://www.contentful.com/) などに接続して、インターネット上からjson管理することも可能です。
 
