@@ -104,8 +104,24 @@ JSONで出力ができるものであれば、CMSに接続することも可能�
 
     YourSNS.json を編集してください。８件以上リンクを追加するとレイアウトが崩れる恐れがあります。
 
+#### 辞書の追加方法
+
+ChatGPTによるサマライズを使用する際に、固有名詞を登録することで、より正確なサマライズを行うことができます。以下の手順で辞書を追加してください。
+
+    DICTIONARY.json を編集してください。以下はDICTIONARY.jsonの記入例です。キーには日本語、値には英語を入力するとうまく動きます。ここに入力された単語は、GPTによるサマライズ時に、受け渡されます
+
+```json
+{
+  "チーム逸般人": "Team Outstndrs"
+}
+```
+
 ## contributrion
 
 Shu, [Twitter](https://twitter.com/shu_out)
 GPT-4 [Website](https://openai.com/)
 Google 先輩, [website](https://www.google.com/)
+
+```
+
+```

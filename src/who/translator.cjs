@@ -4,8 +4,11 @@ const path = require("path");
 require("dotenv").config();
 
 // summary-ja.jsonのパスを構築
+const dictionary = fs.readFileSync("./DICTIONARY.json", "utf8");
+
 const TARGET_LANGUAGE = "en";
-const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}`;
+
+const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}\n And this is proper noun dictionary for translation(written by json): ${dictionary}`;
 
 const inputFilePath = path.join(__dirname, "summary-ja.json");
 const outputFilePath = path.join(__dirname, `summary-${TARGET_LANGUAGE}.json`);
@@ -30,7 +33,7 @@ async function translateText(text, targetLanguage) {
       temperature: 0.7,
       max_tokens: 1000,
     });
-    console.log(`翻訳中...`);
+    console.log(`翻訳中...(${SYSTEM_PROMPT})(${text}}`);
     return response.choices[0].message.content;
   } catch (error) {
     console.error("翻訳中にエラーが発生しました:", error);
