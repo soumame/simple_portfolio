@@ -4,19 +4,8 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const summary = `src/who/summary-${lang}.json`;
-import { readFileSync } from "fs";
-// const itemsPath = path.join("../rss/", `items-${language}`, ".json");
-let data;
-try {
-  const rawData = readFileSync(summary, "utf8");
-  data = JSON.parse(rawData);
-  console.log(data);
-} catch (error) {
-  console.error("Error reading the file:", error);
-  data = null;
-}
 import { BrainCircuit, Quote } from "lucide-astro";
+import AnimText from "./parts/Who";
 ---
 
 <div class="snap-center w-full py-4 px-2 md:px-4">
@@ -35,7 +24,7 @@ import { BrainCircuit, Quote } from "lucide-astro";
       <div class="px-2 md:px-4 py-8 bg-gray-300 rounded-3xl">
         <Quote class="text-gray-700" />
         <p class="mt-2 leading-loose text-gray-700">
-          {data}
+          <AnimText delay={1} lang={lang} client:load />
         </p>
       </div>
     </div>

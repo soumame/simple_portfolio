@@ -33,7 +33,7 @@ async function translateText(text, targetLanguage) {
       temperature: 0.7,
       max_tokens: 1000,
     });
-    console.log(`翻訳中...(${SYSTEM_PROMPT})(${text}}`);
+    console.log(`翻訳中...(${text}}`);
     return response.choices[0].message.content;
   } catch (error) {
     console.error("翻訳中にエラーが発生しました:", error);

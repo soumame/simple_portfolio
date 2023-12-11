@@ -5,13 +5,22 @@ import Contact from "../components/Contact.astro";
 import Navbar from "../components/Navbar.astro";
 import Timeline from "../components/Timeline.astro";
 import Who from "../components/Who.astro";
+import { ViewTransitions } from "astro:transitions";
+import { fade } from "astro:transitions";
+import { slide } from "astro:transitions";
 ---
 
+<head>
+  <ViewTransitions />
+</head>
 <body class="w-screen h-screen">
   <div
     class="h-full grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 bg-gray-200 overflow-y-auto md:overflow-visible"
   >
-    <div class="flex justify-center items-center md:min-h-0 min-h-screen">
+    <div
+      class="flex justify-center items-center md:min-h-0 min-h-screen"
+      transition:animate={fade({ duration: "0.1s" })}
+    >
       <div>
         <About />
         <Contact />
