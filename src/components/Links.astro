@@ -1,7 +1,36 @@
 ---
-import { getLangFromUrl } from "../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const { numberOfPosts } = Astro.props;
-import links from `../Links/items-${lang}.json`;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import { Link } from "lucide-astro";
+
+const links = `src/links/items-${lang}.json`;
+import { readFileSync } from "fs";
+import path from "path";
+// const itemsPath = path.join("../rss/", `items-${language}`, ".json");
+let data;
+try {
+  const rawData = readFileSync(links, "utf8");
+  data = JSON.parse(rawData);
+  console.log("Linksのデータを読み込みました:", data);
+} catch (error) {
+  console.error("Error reading the file:", error);
+  data = null;
+}
 ---
+
+<div id="scrollContainer" class="mt-4 py-3 relative font-noto">
+  {
+    data.map(({ title, link }) => (
+      <div class="bg-gray-200 rounded-3xl p-4 mt-2 shadow-md hover:shadow-lg transition-shadow border border-gray-500/10 mover:shadow-black relative">
+        <p class="flex justify-between">
+          {title}
+          <Link class="text-gray-400" />{" "}
+        </p>
+        <a href={link} class="absolute w-full h-full top-0 left-0" />
+      </div>
+    ))
+  }
+</div>

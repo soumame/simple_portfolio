@@ -51,22 +51,26 @@ import {
     >
       {
         data.slice(0, 6).map(({ date, title, image, description, link }) => (
-          <div class="row-span-1 flex bg-gray-200 rounded-3xl p-2 snap-start shadow-md">
+          <div class=" flex bg-gray-200 p-4 snap-start border-gray-500/10">
             <div class="md:w-[60%] w-[50%]">
-              <p class="text-gray-600 text-sm">{date}</p>
-              <h3 class="text-lg font-bold font-noto pt-2">{title}</h3>
-              <p class="line-clamp-2 font-sm pt-2">{description}</p>
-              <a href={link}>
-                <button class="bg-gray-200 text-gray-600 border-gray-400 text-sm border p-2 rounded-2xl transition duration-200 hover:border-orange-400 hover:bg-gray-300 mt-4">
-                  {t("button.readmore")}
-                </button>
-              </a>
+              <p class="text-gray-600 text-sm font-mono">{date}</p>
+              <h3 class=" text-xl font-bold font-noto pt-2">{title}</h3>
+              <div class="border-l-2 border-gray-400 pl-4">
+                <p class="mt-2 font-sm ">{description}</p>
+                <a
+                  href={link}
+                  class="mt-4 underline underline-offset-4 decoration-dotted	text-gray-600 transition hover:text-orange-600 font-semibold "
+                >
+                  {t("button.link")}
+                </a>
+              </div>
             </div>
             <div class="ml-2 md:w-[40%] w-[50%] flex justify-center items-center">
               <img
                 src={image}
                 alt=""
                 class="saturate-100 aspect-auto rounded-2xl"
+                loading="lazy"
               />
             </div>
           </div>

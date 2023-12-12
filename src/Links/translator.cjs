@@ -8,7 +8,7 @@ require("dotenv").config();
 const itemsPath = path.join(__dirname, "items-ja.json");
 
 const TARGET_LANGUAGE = "en";
-const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}`;
+const SYSTEM_PROMPT = `You are translator for link title. Translate the following link description to target language: ${TARGET_LANGUAGE}`;
 
 // OpenAI API キーの設
 const openai = new OpenAI({
@@ -74,7 +74,7 @@ translateRSSItems(rssItems).then((translatedItems) => {
   if (translatedItems) {
     fs.ensureDirSync(".feed");
     fs.writeJsonSync(
-      `./src/rss/items-${TARGET_LANGUAGE}.json`,
+      `./src/links/items-${TARGET_LANGUAGE}.json`,
       translatedItems,
     );
   }

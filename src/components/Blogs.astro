@@ -18,7 +18,7 @@ try {
   data = null;
 }
 
-import { ChevronLeft, ChevronRight, StickyNote, Search } from "lucide-astro";
+import { BookText } from "lucide-astro";
 
 const blogURL = process.env.BLOG_RSS_URL;
 ---
@@ -27,7 +27,7 @@ const blogURL = process.env.BLOG_RSS_URL;
   <div class="flex flex-col justify-center items-center">
     <div class="flex justify-between w-full">
       <div class="flex md:flex-col">
-        <StickyNote class="h-10 w-10" />
+        <BookText class="h-10 w-10" />
         <div class="flex flex-row">
           <h2 class="text-4xl md:my-2 font-mono text-gray-800">Note</h2>
         </div>
@@ -46,7 +46,7 @@ const blogURL = process.env.BLOG_RSS_URL;
     <div id="scrollContainer" class="mt-4 py-3 relative font-noto">
       {
         data.slice(0, 10).map(({ title, contentSnippet, og, link }) => (
-          <div class="row-span-1 mt-2 flex bg-gray-200 rounded-3xl p-2 md:p-4 snap-start shadow-md">
+          <div class="row-span-1 mt-2 flex bg-gray-200 rounded-3xl p-2 md:p-4 snap-start shadow-md border border-gray-500/10">
             <div class="md:w-[60%] w-[50%]">
               <h3 class="text-lg font-bold font-noto pt-2">{title}</h3>
               <p class="line-clamp-2 font-sm pt-2">{contentSnippet}</p>

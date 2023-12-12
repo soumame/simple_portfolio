@@ -6,9 +6,10 @@ require("dotenv").config();
 
 // items.jsonのパスを構築
 const itemsPath = path.join(__dirname, "items-ja.json");
+const dictionary = fs.readFileSync("./DICTIONARY.json", "utf8");
 
 const TARGET_LANGUAGE = "en";
-const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}`;
+const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}\n And this is proper noun dictionary for translation(written by json): ${dictionary}`;
 
 // OpenAI API キーの設定
 const openai = new OpenAI({

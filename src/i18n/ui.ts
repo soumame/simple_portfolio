@@ -9,12 +9,15 @@ export const ui = {
   en: {
     "button.readmore": "read more",
     "text.seemore_note": "see more on note.com",
-    "text.bygpt": "As this is AI generated text, text might be incorrect.",
+    "text.bygpt":
+      "Reference from GPT - As this is AI generated text, text might be incorrect.",
+    "button.link": "Link",
   },
   ja: {
     "button.readmore": "もっと読む",
     "text.seemore_note": "note.comでもっと見る",
     "text.bygpt":
-      "AIによる文章生成のため、単語などが間違っている場合があります。",
+      "GPTからの紹介状 - AIによる文章生成のため、単語などが間違っている場合があります。",
+    "button.link": "リンク",
   },
 } as const;

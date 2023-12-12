@@ -19,7 +19,7 @@ const LanguagePicker = () => {
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           side="top"
-          className="min-w-[220px] bg-gray-400/30 backdrop-blur-md rounded-2xl p-[5px] shadow-md will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+          className="min-w-[220px] bg-gray-400/30 backdrop-blur-md rounded-2xl p-[5px] shadow-md border border-gray-500/10 will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
           sideOffset={5}
         >
           {Object.entries(languages).map(([lang, label]) => (

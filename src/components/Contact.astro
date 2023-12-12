@@ -8,7 +8,7 @@ import Socials from "./parts/Socials";
 <div class="flex flex-wrap justify-center items-center flex-row gap-2 max-w-lg">
   {
     contacts.map(({ lucideIcon, title, link }) => (
-      <div class="bg-gray-300 text-gray-800 hover:text-orange-600 transition rounded-2xl p-3 relative overflow-hidden ">
+      <div class="bg-gray-300 text-gray-800 hover:text-orange-600 shadow-md hover:shadow-lg transition rounded-2xl p-3 relative overflow-hidden ">
         <Socials icon={lucideIcon} title={title} />
         <a class="absolute w-full h-full top-0 left-0" href={link} />
       </div>
