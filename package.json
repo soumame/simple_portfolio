@@ -13,7 +13,7 @@
     "timeline-copy": "node ./src/timeline/importer.mjs",
     "timeline-translate": "node ./src/timeline/translator.cjs",
     "timeline": "npm run timeline-copy && npm run timeline-translate",
-    "links-copy": "node ./src/links/importer.cjs",
+    "links-copy": "node ./src/links/importer.mjs",
     "links-translate": "node ./src/links/translator.cjs",
     "links": "npm run links-copy && npm run links-translate",
     "all": "npm run rss && npm run links && npm run timeline && npm run summary",
