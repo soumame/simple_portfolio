@@ -2,6 +2,7 @@ import { green } from "kolorist";
 import fs from "fs";
 import path from "path";
 
+//リンク一覧をコピーする
 const filePath = path.resolve("LINKS.json");
 const here = path.resolve("./src/links");
 
