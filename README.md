@@ -15,7 +15,7 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsoumame%2Fsimple_portfolio&env=BLOG_RSS_URL,OPENAI_API_KEY&envDescription=BLOG_RSS_URL%E3%81%AB%E3%81%AF%E3%80%81%20htttps%3A%2F%2Fnote.com%2F%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%90%8D%2Frss%20%E3%82%92%E3%80%81OPENAI_API_KEY%E3%81%AB%E3%81%AF%E3%80%81%20https%3A%2F%2Fplatform.openai.com%2Fapi-keys%20%E3%81%8B%E3%82%89%E7%99%BA%E8%A1%8C%E3%81%97%E3%81%9FAPI%E3%82%AD%E3%83%BC%E3%82%92%E5%85%A5%E5%8A%9B%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%20API%E3%81%AF%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E7%BF%BB%E8%A8%B3%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99%E3%80%82&project-name=so-simple-portfolio&repository-name=so-simple-portfolio&redirect-url=https%3A%2F%2Fso-bean.work)
 
-ボタンをクリックして、Vercel にデプロイしてください。デプロイ時に、以下の環境変数を設定してください。
+ボタンをクリックして、Vercel にデプロイしてください。デプロイ時に、以下の環境変数を設定してください。この例はnoteを使用した際の例です。他のブログサイトなどを使用する場合は、そのRSSのURLを入力してください。（対応しているかは未確認ですが、多分使えるかな？）
 
 ```
 BLOG_RSS_URL = https://note.com/あなたのユーザー名/rss
