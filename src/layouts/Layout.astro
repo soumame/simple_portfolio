@@ -14,22 +14,22 @@ import { slide } from "astro:transitions";
 <head>
   <ViewTransitions />
 </head>
-<body class="w-screen h-screen">
+<body class="w-screen h-screen bg-gray-200 flex justify-center items-center">
   <div
-    class="h-full grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 bg-gray-200 overflow-y-auto md:overflow-visible"
+    class="h-full max-w-7xl grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 overflow-y-auto md:overflow-visible"
   >
     <div
       class="flex justify-center items-center md:min-h-0 min-h-screen"
       transition:animate={fade({ duration: "0.1s" })}
     >
-      <div>
+      <div class="md:p-4 p-2">
         <About />
         <Contact />
-        <Links />
+        <Links slice="3" />
       </div>
     </div>
 
-    <div class="md:overflow-scroll flex flex-col">
+    <div class="md:overflow-scroll flex flex-col md:pr-4 p-2">
       <Who />
       <Blogs />
       <Timeline />

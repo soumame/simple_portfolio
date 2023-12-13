@@ -8,14 +8,15 @@
 
 ## 仕組み・コンセプト
 
-- モバイルファーストデザイン
 - シンプルにあなたを表現する
   - 自己紹介ページで簡潔に伝えよう
   - Works ページであなたが生み出したものを見せつけよう。
   - Blog ページであなたの考えを発信しよう。
   - Contact ページでたくさんの人と繋がろう。
 - 世界と繋がる
-  - GPT3.5を使用して、英語に翻訳したページを生成。世界中の人と繋がろう。
+  - GPT3.5 & 4.0 を使用して、英語に翻訳したページを生成。世界中の人と繋がろう。
+
+ページの大半をAIが生成してくれるので、自己紹介というより、AIがあなたを紹介するページになってしまうかもしれませんね。
 
 ## クイックスタート
 
@@ -29,7 +30,7 @@
 
 ```
 BLOG_RSS_URL = https://note.com/あなたのユーザー名/rss
-OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキーを入力してください。
+OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキーを入力してください。プロフィール生成のため、GPT4.0が使用可能であることを確認してください。
 ```
 
 ### 2. デプロイ後に設定を変更
@@ -39,6 +40,8 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 - YOURINFO.json - 自己紹介ページの内容を変更
 - TIMELINE.json - Worksページの内容を変更
 - YourSNS.json - Contactページの内容を変更
+- LINKS.json - 好きなサイトのリンクを３件まで追加できます。
+- DICTIONARY.json - ChatGPTによるサマライズの時に固有名詞を登録する辞書を追加できます。
 
 内容を保存してプッシュすれば完成です。
 
@@ -102,7 +105,17 @@ JSONで出力ができるものであれば、CMSに接続することも可能�
 
 #### Contact の追加方法
 
-    YourSNS.json を編集してください。８件以上リンクを追加するとレイアウトが崩れる恐れがあります。
+    YourSNS.json を編集してください。以下は対応しているSNSの一覧です。
+
+- Twitter,
+- Instagram,
+- Github,
+- Linkedin,
+- Mail,
+- Buy me a coffee,
+- Youtube,
+- Bitcoin,
+  記載されているもの以外のSNSを追加したい場合は、src/components/Social.jsxを頑張って編集してください。アイコンはLucideに依存しています。
 
 #### 辞書の追加方法
 

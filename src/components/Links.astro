@@ -19,11 +19,12 @@ try {
   console.error("Error reading the file:", error);
   data = null;
 }
+const { slice } = Astro.props;
 ---
 
-<div id="scrollContainer" class="mt-4 py-3 relative font-noto">
+<div id="scrollContainer" class="mt-4 py-3">
   {
-    data.map(({ title, link }) => (
+    data.slice(0, slice).map(({ title, link }) => (
       <div class="bg-gray-200 rounded-3xl p-4 mt-2 shadow-md hover:shadow-lg transition-shadow border border-gray-500/10 mover:shadow-black relative">
         <p class="flex justify-between">
           {title}
