@@ -16,7 +16,7 @@
     "links-copy": "node ./src/links/importer.mjs",
     "links-translate": "node ./src/links/translator.cjs",
     "links": "npm run links-copy && npm run links-translate",
-    "all": "npm run rss && npm run links && npm run timeline && npm run summary",
+    "all": "npm run rss && npm run summary && npm run timeline && npm run links",
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "npm i && npm run all && npm run astro build",
