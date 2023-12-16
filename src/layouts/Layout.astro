@@ -23,17 +23,24 @@ import { slide } from "astro:transitions";
       transition:animate={fade({ duration: "0.1s" })}
     >
       <div class="md:p-4 p-2">
-        <About />
-        <Contact />
-        <Links slice="3" />
+        <div id="about">
+          <About />
+          <Contact />
+          <Links slice="3" />
+        </div>
       </div>
     </div>
 
-    <div class="md:overflow-scroll flex flex-col md:pr-4 p-2">
-      <Who />
-      <Blogs />
-      <Timeline />
+    <div class="md:overflow-scroll flex flex-col md:pr-4 p-2 scroll-smooth">
+      <div id="who"><Who /></div>
+      <div id="blogs"><Blogs /></div>
+      <div id="timeline" class="mb-16"><Timeline /></div>
     </div>
   </div>
   <Navbar />
 </body>
+<style>
+  body {
+    scroll-behavior: smooth;
+  }
+</style>

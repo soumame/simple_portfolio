@@ -1,15 +1,16 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 
-import { Contact, Briefcase, BookText, Bookmark } from "lucide-react";
+import { Contact, BrainCircuit, BookText, Briefcase } from "lucide-react";
 
 import "./menubutton.css";
 
 const Menutips = (props) => {
   const components = {
-    Briefcase: Briefcase,
     Contact: Contact,
+    BrainCircuit: BrainCircuit,
     BookText: BookText,
-    Bookmark: Bookmark,
+    Briefcase: Briefcase,
+
     // アイコンのこんぽーねんとついか
   };
   const IconComponent = components[props.icon];

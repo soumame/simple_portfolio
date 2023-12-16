@@ -11,23 +11,23 @@ const lang = getLangFromUrl(Astro.url);
   <nav class="m-4 bg-gray-400/30 backdrop-blur-md fixed rounded-3xl z-50">
     <ul class="flex gap-1.5 sm:gap-4 items-center justify-center">
       <li>
-        <a href=`/${lang}/#about` class="">
+        <a href=`/${lang}/#about` class="md:hidden">
           <Menutips icon="Contact" text="About" client:load />
         </a>
       </li>
       <li>
-        <a href=`/${lang}/#works` class="">
-          <Menutips icon="Briefcase" text="Timeline" client:load />
+        <a href=`/${lang}/#who` class="">
+          <Menutips icon="BrainCircuit" text="Who?" client:load />
         </a>
       </li>
       <li>
         <a href=`/${lang}/#blogs` class="">
-          <Menutips icon="BookText" text="Blog" client:load />
+          <Menutips icon="BookText" text="Blogs" client:load />
         </a>
       </li>
       <li>
-        <a href=`/${lang}/#contact` class="">
-          <Menutips icon="Bookmark" text="Bookmarks" client:load />
+        <a href=`/${lang}/#timeline` class="">
+          <Menutips icon="Briefcase" text="Timeline" client:load />
         </a>
       </li>
       <li><span class="border-l-2 border-gray-400"></span></li>
