@@ -4,11 +4,13 @@ const fs = require("fs-extra");
 const path = require("path");
 require("dotenv").config();
 
+const dictionary = fs.readFileSync("./DICTIONARY.json", "utf8");
+
 // items.jsonのパスを構築
 const itemsPath = path.join(__dirname, "items-ja.json");
 
 const TARGET_LANGUAGE = "en";
-const SYSTEM_PROMPT = `You are translator for link title. Translate the following link description to target language: ${TARGET_LANGUAGE}`;
+const SYSTEM_PROMPT = `You are translator for link title. Translate the following link description to target language: ${TARGET_LANGUAGE}\nAnd this is proper noun dictionary for translation(written by json): ${dictionary}`;
 
 // OpenAI API キーの設
 const openai = new OpenAI({

@@ -26,10 +26,11 @@ const { slice } = Astro.props;
   {
     data.slice(0, slice).map(({ title, link }) => (
       <div class="bg-gray-200 rounded-3xl p-4 mt-2 shadow-md hover:shadow-lg transition-shadow border border-gray-500/10 mover:shadow-black relative">
-        <p class="flex justify-between">
+        <p class="flex justify-between font-bold text-gray-700">
           {title}
           <Link class="text-gray-400" />{" "}
         </p>
+        <p class="text-sm text-gray-400">{link}</p>
         <a href={link} class="absolute w-full h-full top-0 left-0" />
       </div>
     ))
