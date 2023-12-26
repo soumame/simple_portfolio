@@ -41,5 +41,8 @@ export default {
       mame: ["Mamefont"],
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    // ...
+  ],
 };

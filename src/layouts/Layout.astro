@@ -14,12 +14,12 @@ import { slide } from "astro:transitions";
 <head>
   <ViewTransitions />
 </head>
-<body class="w-screen h-screen bg-gray-200 flex justify-center items-center">
+<body class="bg-gray-200 h-screen w-screen">
   <div
-    class="h-full max-w-7xl grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 overflow-y-auto md:overflow-visible"
+    class="h-full grid md:grid-cols-2 md:py-4 md:pl-4 grid-cols-1 overflow-y-auto md:overflow-scroll"
   >
     <div
-      class="flex justify-center items-center md:min-h-0 min-h-screen"
+      class="flex justify-center items-center md:min-h-0 min-h-screen w-screen md:w-auto"
       transition:animate={fade({ duration: "0.1s" })}
     >
       <div class="md:p-4 p-2">
@@ -31,10 +31,12 @@ import { slide } from "astro:transitions";
       </div>
     </div>
 
-    <div class="md:overflow-scroll flex flex-col md:pr-4 p-2 scroll-smooth">
-      <div id="who"><Who /></div>
+    <div
+      class="md:overflow-scroll flex flex-col md:pr-4 p-2 scroll-smooth mx-auto md:max-h-screen max-h-0 justify-right items-right"
+    >
+      <div id="who"><Who client:load /></div>
       <div id="blogs"><Blogs /></div>
-      <div id="timeline" class="mb-16"><Timeline /></div>
+      <div id="timeline"><Timeline /></div>
     </div>
   </div>
   <Navbar />

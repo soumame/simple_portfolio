@@ -5,11 +5,10 @@
 - 簡単カスタマイズ。
 - 数クリックで作成可能。
 
-ページの大半をAIが生成してくれるので、自己紹介というより、AIがあなたを紹介するページになってしまうかもしれませんね。
-
 ## クイックスタート
 
 以下はこのサイトをすぐにつくるための手順です。詳細は後述します。
+必要なもの：noteやzennなどのRSSのURLと、OpenAIのAPIキー、自己紹介の文章、作品や経歴欄に使う写真と説明文、SNSのリンクを用意してください。
 
 ### 1. Vercel にデプロイ
 
@@ -84,13 +83,15 @@ OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキ�
 
 JSONで出力ができるものであれば、CMSに接続することも可能です。例えば、[Contentful](https://www.contentful.com/) などに接続して、インターネット上からjson管理することも可能です。
 
-#### note(RSS)の設定方法
+#### ブログの設定方法
+
+    BLOG_RSS_URL には、ブログのRSSのURLを入力してください。以下はnoteを使用した際の例です。
 
 デプロイ時に設定する環境変数(Environment Variable)に、`BLOG_RSS_URL` を設定し、noteのURLの末尾に`/rss`を追加したものを入力してください。例えば、`https://note.com/yourname`の場合、`https://note.com/yourname/rss`となります。Vercelを通してデプロイする際は、Vercelのダッシュボードから設定することができます。
 
 特に設定を変更しなければ、RSSの内容はrss-parserを使用して、src/rss/にitems-ja.jsonとしてビルド時にコピーされ、GPT3.5を使用して英語(items-en.json)に翻訳されます。
 
-また、RSSを使用して取得しているので、note以外のサービスでも使用できます。取得するRSSに合わせて、取得する内容を`So-Simple-portfolio/src/components/Blogs.astro`で変更してください。（note以外のRSSでは動作未確認です。）
+また、RSSを使用して取得しているので、note以外のサービスでも使用できます。取得するRSSに合わせて、取得する内容を`So-Simple-portfolio/src/components/Blogs.astro`で変更してください。（note、zenn以外のRSSでは動作を確認していません）
 
 #### Contact の追加方法
 
@@ -109,7 +110,7 @@ JSONで出力ができるものであれば、CMSに接続することも可能�
 
 #### 辞書の追加方法
 
-ChatGPTによるサマライズを使用する際に、固有名詞を登録することで、より正確なサマライズを行うことができます。以下の手順で辞書を追加してください。
+GPTによるサマライズを使用する際に、固有名詞を登録することで、より正確なサマライズを行うことができます。以下の手順で辞書を追加してください。
 
     DICTIONARY.json を編集してください。以下はDICTIONARY.jsonの記入例です。キーには日本語、値には英語を入力するとうまく動きます。ここに入力された単語は、GPTによるサマライズ時に、受け渡されます
 
