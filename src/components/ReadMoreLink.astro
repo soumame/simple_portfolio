@@ -1,0 +1,60 @@
+---
+import { Link } from "lucide-astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { link } = Astro.props;
+---
+
+<button class="button">
+  <span class="flex justify-between">
+    <p class="">{t("button.link")}</p>
+    <span>
+      <Link class="p-0.5" />
+    </span>
+  </span>
+  <p
+    class="pr-3 md:text-sm text-xs text-gray-400 font-medium text-ellipsis overflow-hidden"
+  >
+    {link}
+  </p>
+</button>
+<style>
+  .button {
+    padding: 0.6rem;
+    margin-top: 1rem;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-color: #9ca3af;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    color: #4b5563;
+    background-color: #e5e7eb;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 200ms;
+  }
+  .button:hover {
+    background-color: #d1d5db;
+    border-color: #f97316;
+  }
+  .button > span > span {
+    transition-duration: 300ms;
+    color: #9ca3af;
+    position: relative;
+    right: 5px;
+    opacity: 0.5;
+  }
+  .button:hover > span > span {
+    transition-duration: 300ms;
+    color: #f97316;
+    opacity: 1;
+    position: relative;
+    right: 0px;
+  }
+</style>

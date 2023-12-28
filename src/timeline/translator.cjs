@@ -8,6 +8,14 @@ require("dotenv").config();
 const itemsPath = path.join(__dirname, "items-ja.json");
 const dictionary = fs.readFileSync("./DICTIONARY.json", "utf8");
 
+//YOURINFOを元に翻訳する言語を決定する
+// const dataPath = fs.readFileSync("./YOURINFO.json", "utf8");
+// const data = JSON.parse(dataPath);
+// const languageCodesExceptJA = getLanguageCodesExceptJA(data);
+// function getLanguageCodesExceptJA(data) {
+//   return Object.keys(data).filter((key) => key !== "ja");
+// }
+
 const TARGET_LANGUAGE = "en";
 const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}\n And this is proper noun dictionary for translation(written by json): ${dictionary}`;
 
@@ -15,6 +23,7 @@ const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 // 翻訳関数
 async function translateText(text, targetLanguage) {
   try {
