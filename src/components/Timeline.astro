@@ -26,13 +26,17 @@ import {
 import ReadMoreLink from "./ReadMoreLink.astro";
 ---
 
-<div class="snap-center w-full h-full py-4 px-2 md:px-4 mb-16">
+<div
+  class="snap-center w-full h-full py-4 px-2 md:px-4 mb-16 min-h-screen flex flex-col justify-center items-center"
+>
   <div class="flex flex-col justify-center items-center">
     <div class="flex flex-col w-full">
       <div class="flex md:flex-col">
         <Briefcase class="h-10 w-10" />
         <div class="flex flex-row">
-          <h2 class="text-4xl md:my-2 font-mono text-gray-800">What I did</h2>
+          <h2 class="text-3xl md:text-4xl md:my-2 font-mono text-gray-800">
+            What I did
+          </h2>
         </div>
       </div>
     </div>

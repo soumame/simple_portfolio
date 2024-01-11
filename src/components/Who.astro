@@ -25,17 +25,17 @@ import { Bot, Quote } from "lucide-astro";
       <div class="flex flex-col">
         <Bot class="h-10 w-10" />
         <div class="flex flex-row">
-          <h2 class="text-4xl md:my-2 font-mono text-gray-800">
+          <h2 class="text-3xl md:text-4xl md:my-2 font-mono text-gray-800">
             Who are they?
           </h2>
         </div>
-        <p class="text-red-700 font-italic mt-2">{t("text.bygpt")}</p>
+        <p class="text-gray-500 font-italic mt-2">{t("text.bygpt")}</p>
       </div>
     </div>
 
     <div id="scrollContainer" class="mt-4 py-3 relative font-noto">
       <div class="px-2 md:px-4 py-8 bg-transparent shadow-md rounded-3xl">
-        <Quote class="text-gray-400" />
+        <Quote class="text-orange-400" />
         <script>
           import Typewriter from "typewriter-effect/dist/core";
           var app = document.getElementById("app");
