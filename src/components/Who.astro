@@ -36,23 +36,6 @@ import { Bot, Quote } from "lucide-astro";
     <div id="scrollContainer" class="mt-4 py-3 relative font-noto">
       <div class="px-2 md:px-4 py-8 bg-transparent shadow-md rounded-3xl">
         <Quote class="text-orange-400" />
-        <script>
-          import Typewriter from "typewriter-effect/dist/core";
-          var app = document.getElementById("app");
-          var typewriter = new Typewriter(app, {
-            loop: true,
-          });
-          typewriter
-            .typeString("Hello World!")
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString("Strings can be removed")
-            .pauseFor(2500)
-            .deleteChars(7)
-            .typeString("<strong>altered!</strong>")
-            .pauseFor(2500)
-            .start();
-        </script>
         <div class="app"></div>
         <p class="mt-2 leading-loose text-sm text-gray-700">
           {data}

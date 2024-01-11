@@ -45,7 +45,7 @@ const cleanedURL = blogURL.replace(/\/[^\/]*$/, "");
       class="mt-4 py-3 relative font-noto grid grid-cols-1 xl:grid-cols-2 xl:gap-4"
     >
       {
-        data.slice(0, 10).map(({ title, contentSnippet, og, link }) => {
+        data.slice(0, 10).map(({ title, contentSnippet, og, link }: any) => {
           return (
             <div class=" mt-2 flex flex-wrap-reverse justify-center items-center bg-gray-200 rounded-3xl p-2 md:p-4 shadow-md border border-gray-500/10">
               <div class="w-full max-w-xs">
