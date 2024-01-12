@@ -1,0 +1,51 @@
+---
+import fs from "fs";
+import path from "path";
+import { getLangFromUrl } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const sitePath = Astro.url.href;
+
+//YOURINFOから読み込む
+const infoPath = path.resolve("YOURINFO.json");
+const rawData: any = fs.readFileSync(infoPath);
+
+const SNSPath = path.resolve("YourSNS.json");
+const rawSNS: any = fs.readFileSync(SNSPath);
+
+const jsonData = JSON.parse(rawData);
+const SNSData = JSON.parse(rawSNS);
+
+const janame = jsonData.ja[0].name;
+const enname = jsonData.en[0].name;
+const jabio = jsonData.ja[0].bio;
+const enbio = jsonData.en[0].bio;
+const jaicon = jsonData.ja[0].icon;
+const enicon = jsonData.en[0].icon;
+
+const twitterLink = SNSData.find((item: any) => item.title === "Twitter")?.link;
+const twitterUsername = twitterLink.split("/").pop();
+
+const bio = lang === "ja" ? jabio : enbio;
+const icon = lang === "ja" ? jaicon : enicon;
+const name = lang === "ja" ? janame : enname;
+---
+
+<head>
+  {" "}
+  <meta name="description" content={bio} />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{name}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href={icon} /></head
+>
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Noto+Sans+JP:wght@200;400;700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
+  rel="stylesheet"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content={twitterUsername} />
+<meta name="twitter:creator" content={twitterUsername} />
+<meta name="twitter:image" content={icon} />
+<meta property="og:url" content={sitePath} />
