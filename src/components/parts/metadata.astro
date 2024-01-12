@@ -32,10 +32,15 @@ const name = lang === "ja" ? janame : enname;
 
 <head>
   {" "}
-  <meta name="description" content={bio} />
+  <!--language -->
+  <link rel="alternate" hreflang="ja-jp" href=`${sitePath}/ja` />
+  <link rel="alternate" hreflang="en" href=`${sitePath}/en` />
+  <link rel="alternate" hreflang="x-default" href=`${sitePath}` />
+  <!--meta tags -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
   <title>{name}</title>
+  <meta name="description" content={bio} />
+  <meta name="viewport" content="width=device-width" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href={icon} /></head
@@ -44,8 +49,10 @@ const name = lang === "ja" ? janame : enname;
   href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=Noto+Sans+JP:wght@200;400;700&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
   rel="stylesheet"
 />
+<meta property="og:url" content={sitePath} />
+
+<!--Twitter -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content={twitterUsername} />
 <meta name="twitter:creator" content={twitterUsername} />
 <meta name="twitter:image" content={icon} />
-<meta property="og:url" content={sitePath} />

@@ -18,7 +18,7 @@
 
 ```
 BLOG_RSS_URL = https://note.com/あなたのユーザー名/rss
-OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキーを入力してください。プロフィール生成のため、GPT4.0が使用可能であることを確認してください。
+OPENAI_API_KEY = https://platform.openai.com/api-keys から発行したAPIキーを入力してください。プロフィール生成に使用するため、GPT4.0が使用可能である、課金アカウントであることを確認してください。
 ```
 
 ### 2. デプロイ後に設定を変更
