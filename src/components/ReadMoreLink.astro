@@ -3,10 +3,10 @@ import { Link } from "lucide-astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const { link } = Astro.props;
+const { link, width } = Astro.props;
 ---
 
-<button class="button">
+<button class=`button w-[${width}%]`>
   <span class="flex justify-between">
     <p class="">{t("button.link")}</p>
     <span>

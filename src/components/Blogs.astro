@@ -29,41 +29,39 @@ const cleanedURL = blogURL.replace(/\/[^\/]*$/, "");
   class="snap-center w-full py-4 px-2 md:px-4 min-h-screen flex flex-col justify-center items-center"
 >
   <div class="flex flex-col justify-center items-center">
-    <div class="flex flex-col w-full">
-      <div class="flex md:flex-col">
+    <div class="flex flex-col w-full justify-center items-center">
+      <div class="flex">
         <BookText class="h-10 w-10" />
         <div class="flex flex-row">
-          <h2 class="text-3xl md:text-4xl md:my-2 font-mono text-gray-800">
-            Blogs
-          </h2>
+          <h2 class="text-3xl md:text-4xl font-mono text-gray-800">Blogs</h2>
         </div>
       </div>
     </div>
 
     <div
       id="scrollContainer"
-      class="mt-4 py-3 relative font-noto grid grid-cols-1 xl:grid-cols-2 xl:gap-4"
+      class="mt-4 py-3 relative font-noto grid grid-cols-1 xl:grid-cols-2 xl:gap-4 gap-3"
     >
       {
-        data.slice(0, 10).map(({ title, contentSnippet, og, link }: any) => {
+        data.slice(0, 8).map(({ title, contentSnippet, og, link }: any) => {
           return (
-            <div class=" mt-2 flex flex-wrap-reverse justify-center items-center bg-gray-200 rounded-3xl p-2 md:p-4 shadow-md border border-gray-500/10">
-              <div class="w-full max-w-xs">
-                <h3 class="text-base font-bold font-noto pt-2">{title}</h3>
-                <p class="line-clamp-2 text-xs md:text-base pt-2">
+            <div class="w-full bg-gray-200 rounded-3xl border shadow grid grid-cols-2 border-gray-500/10 p-4 transition ease-out delay-50 hover:shadow-lg">
+              <div class="w-full">
+                <h4 class="text-base font-bold font-noto">{title}</h4>
+                <p class="text-xs md:text-base line-clamp-2 font-noto">
                   {contentSnippet}
                 </p>
-                <a href={link}>
-                  <ReadMoreLink link={link} />
-                </a>
               </div>
-              <div class="ml-2 w-full max-w-xs flex justify-center items-center">
+              <div class="w-full">
                 <img
                   loading="lazy"
                   src={og}
                   alt=""
-                  class="saturate-100 aspect-auto rounded-2xl"
+                  class="saturate-100 aspect-auto rounded-2xl ml-2"
                 />
+              </div>
+              <div class="col-span-2">
+                <ReadMoreLink link={link} width="100" />
               </div>
             </div>
           );

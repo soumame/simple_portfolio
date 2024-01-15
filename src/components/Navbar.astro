@@ -5,36 +5,6 @@ import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<div
-  class="w-full flex flex-wrap justify-center items-center absolute bottom-16 mt-10"
->
-  <nav class="m-4 bg-gray-400/30 backdrop-blur-md fixed rounded-3xl z-50">
-    <ul class="flex gap-1.5 sm:gap-4 items-center justify-center">
-      <li>
-        <a href=`/${lang}/#about` class="md:hidden">
-          <Menutips icon="Contact" text="About" client:load />
-        </a>
-      </li>
-      <li>
-        <a href=`/${lang}/#who` class="">
-          <Menutips icon="Bot" text="Who" client:load />
-        </a>
-      </li>
-      <li>
-        <a href=`/${lang}/#blogs` class="">
-          <Menutips icon="BookText" text="Blogs" client:load />
-        </a>
-      </li>
-      <li>
-        <a href=`/${lang}/#timeline` class="">
-          <Menutips icon="Briefcase" text="Timeline" client:load />
-        </a>
-      </li>
-      <li><span class="border-l-2 border-gray-400"></span></li>
-
-      <li>
-        <LanguagePicker client:load />
-      </li>
-    </ul>
-  </nav>
+<div class="absolute bottom-2 right-2">
+  <LanguagePicker client:load />
 </div>
