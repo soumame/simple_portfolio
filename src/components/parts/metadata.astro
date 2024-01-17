@@ -31,6 +31,19 @@ const name = lang === "ja" ? janame : enname;
 ---
 
 <head>
+  <!--Gtag -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RSTYH737D"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-0RSTYH737D");
+  </script>
   {" "}
   <!--language -->
   <link rel="alternate" hreflang="ja-jp" href=`${sitePath}/ja` />
