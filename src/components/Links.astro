@@ -33,7 +33,11 @@ const { slice } = Astro.props;
           </span>
         </p>
         <p class="md:text-sm text-xs text-gray-400">{link}</p>
-        <a href={link} class="absolute w-full h-full top-0 left-0" />
+        <a
+          href={link}
+          class="absolute w-full h-full top-0 left-0"
+          aria-label={`link of ${title}`}
+        />
       </div>
     ))
   }

@@ -3,44 +3,46 @@ import Layout from "../../layouts/Layout.astro";
 import Metadata from "../../components/parts/metadata.astro";
 ---
 
-<head>
-  <Metadata />
-</head>
-<Layout />
+<html lang="ja">
+  <head>
+    <Metadata />
+  </head>
+  <Layout />
 
-<style>
-  @keyframes reveal {
-    from {
-      opacity: 0;
-      clip-path: circle(100%);
+  <style>
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        clip-path: circle(100%);
+      }
+      to {
+        opacity: 1;
+        clip-path: circle(100%);
+      }
     }
-    to {
-      opacity: 1;
-      clip-path: circle(100%);
+
+    .revealing {
+      /* Create View Timeline */
+      view-timeline-name: --revealing;
+      view-timeline-axis: block;
+
+      /* Attach animation, linked to the  View Timeline */
+      animation: linear reveal both;
+      animation-timeline: --revealing;
+
+      /* Tweak range when effect should run*/
+      animation-range: entry 45% cover 50%;
     }
-  }
 
-  .revealing {
-    /* Create View Timeline */
-    view-timeline-name: --revealing;
-    view-timeline-axis: block;
-
-    /* Attach animation, linked to the  View Timeline */
-    animation: linear reveal both;
-    animation-timeline: --revealing;
-
-    /* Tweak range when effect should run*/
-    animation-range: entry 45% cover 50%;
-  }
-
-  @keyframes shrink {
-    from {
-      max-width: 100rem;
-      max-height: 100rem;
+    @keyframes shrink {
+      from {
+        max-width: 100rem;
+        max-height: 100rem;
+      }
+      to {
+        max-width: 36rem /* 576px */;
+        max-height: 48rem /* 768px */;
+      }
     }
-    to {
-      max-width: 36rem /* 576px */;
-      max-height: 48rem /* 768px */;
-    }
-  }
-</style>
+  </style>
+</html>

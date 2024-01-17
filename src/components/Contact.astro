@@ -10,7 +10,11 @@ import Socials from "./parts/Socials";
     contacts.map(({ lucideIcon, title, link }) => (
       <div class="bg-gray-300 text-gray-800 hover:text-orange-600 shadow-md hover:shadow-lg transition rounded-2xl p-3 relative overflow-hidden ">
         <Socials icon={lucideIcon} title={title} />
-        <a class="absolute w-full h-full top-0 left-0" href={link} />
+        <a
+          class="absolute w-full h-full top-0 left-0"
+          href={link}
+          aria-label={`link of ${title}`}
+        />
       </div>
     ))
   }
