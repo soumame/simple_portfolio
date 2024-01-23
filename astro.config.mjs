@@ -5,13 +5,12 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  experimental: {
-    i18n: {
-      defaultLocale: "ja",
-      locales: ["en", "ja"],
-      routing: {
-        prefixDefaultLocale: true,
-      },
+  i18n: {
+    defaultLocale: "ja",
+    locales: ["en", "ja"],
+    routing: {
+      prefixDefaultLocale: true,
     },
   },
+  experimental: {},
 });
