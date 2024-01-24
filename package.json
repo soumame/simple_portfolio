@@ -41,7 +41,7 @@
     "dotenv": "^16.3.1",
     "framer-motion": "^10.16.16",
     "fs-extra": "^11.1.1",
-    "lucide-astro": "^0.293.0",
+    "lucide-astro": "^0.314.0",
     "lucide-react": "^0.294.0",
     "open-graph-scraper": "^6.3.0",
     "openai": "^4.20.0",
