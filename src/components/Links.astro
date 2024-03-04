@@ -14,7 +14,6 @@ let data;
 try {
   const rawData = readFileSync(links, "utf8");
   data = JSON.parse(rawData);
-  console.log("Linksのデータを読み込みました:", data);
 } catch (error) {
   console.error("Error reading the file:", error);
   data = null;

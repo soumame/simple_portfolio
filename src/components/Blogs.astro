@@ -12,7 +12,6 @@ let data;
 try {
   const rawData = readFileSync(items, "utf8");
   data = JSON.parse(rawData);
-  console.log(data);
 } catch (error) {
   console.error("Error reading the file:", error);
   data = null;
