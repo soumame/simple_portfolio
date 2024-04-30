@@ -6,9 +6,9 @@ const t = useTranslations(lang);
 const { link, width } = Astro.props;
 ---
 
-<button class=`button w-[${width}%]`>
+<button class=`relative button w-[${width}%]`>
   <span class="flex justify-between">
-    <p class="">{t("button.link")}</p>
+    <p class="text-gray-900">{t("button.link")}</p>
     <span>
       <Link class="p-0.5" />
     </span>
@@ -18,6 +18,8 @@ const { link, width } = Astro.props;
   >
     {link}
   </p>
+
+  <a href={link} class="w-full h-full absolute top-0 left-0"></a>
 </button>
 <style>
   .button {
@@ -43,7 +45,7 @@ const { link, width } = Astro.props;
     background-color: #d1d5db;
     border-color: #f97316;
   }
-  .button > span > span {
+  .button > span {
     transition-duration: 300ms;
     color: #9ca3af;
     position: relative;
