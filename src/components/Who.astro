@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const summary = `src/pages/api/who/who-1.json`;
+const summary = `src/who/summary-${lang}.json`;
 import { readFileSync } from "fs";
 // const itemsPath = path.join("../rss/", `items-${language}`, ".json");
 let data;
