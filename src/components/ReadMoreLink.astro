@@ -6,21 +6,24 @@ const t = useTranslations(lang);
 const { link, width } = Astro.props;
 ---
 
-<button class=`relative button w-[${width}%]`>
-  <span class="flex justify-between">
-    <p class="text-gray-900">{t("button.link")}</p>
-    <span>
-      <Link class="p-0.5" />
-    </span>
-  </span>
-  <p
-    class="pr-3 md:text-sm text-xs text-gray-400 font-medium text-ellipsis overflow-hidden"
-  >
-    {link}
-  </p>
+{
+  link && (
+    <button class={`relative button w-[${width}%]`}>
+      <span class="flex justify-between">
+        <p class="text-gray-900">{t("button.link")}</p>
+        <span>
+          <Link class="p-0.5" />
+        </span>
+      </span>
+      <p class="pr-3 md:text-sm text-xs text-gray-400 font-medium text-ellipsis overflow-hidden">
+        {link}
+      </p>
 
-  <a href={link} class="w-full h-full absolute top-0 left-0"></a>
-</button>
+      <a href={link} class="w-full h-full absolute top-0 left-0" />
+    </button>
+  )
+}
+
 <style>
   .button {
     padding: 0.6rem;

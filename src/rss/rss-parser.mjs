@@ -50,9 +50,14 @@ async function fetchFeedItems(url) {
   const data = await fetchFeedItems(process.env.BLOG_RSS_URL);
 
   if (data) {
-    data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
+    try {
+      data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
 
-    fs.ensureDirSync(".feed");
-    fs.writeJsonSync("./src/rss/items-ja.json", data);
+      fs.ensureDirSync(".feed");
+      fs.writeJsonSync("./src/rss/items-ja.json", data);
+    } catch (err) {
+      console.log(red("rssのJSONファイルの書き込みに失敗しました"));
+      console.log(err);
+    }
   }
 })();

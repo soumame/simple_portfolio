@@ -19,3 +19,18 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# 生成されるファイル
+src/Links/items-en.json
+src/links/items-en.json
+src/Links/items-ja.json
+src/links/items-ja.json
+src/rss/items-en.json
+src/who/timeline-ja.json
+src/who/summary-ja.json
+src/who/summary-en.json
+src/who/info-ja.json
+src/timeline/items-ja.json
+src/timeline/items-en.json
+src/links/DICTIONARY.json
+src/timeline/DICTIONARY.json
