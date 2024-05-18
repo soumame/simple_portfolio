@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl request
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
                -d '{"key":"value"}' \
-               ${{ secrets.WEBHOOK_URL }}
+                "$WEBHOOK_URL"
