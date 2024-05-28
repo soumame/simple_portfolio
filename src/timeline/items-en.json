@@ -1,1 +1,38 @@
-[{"title":"Minecraft Cup 2023 Encouragement Award Received","image":"https://minecraftcup.com/2022/wp-content/themes/minecraft/img/favicon/ogp2023.png","description":"The team \"Team Outstanding Individuals\", composed of members ranging from elementary school students to high school students who are active on the Internet, won an award at the Minecraft Cup district competition held in Japan.","link":"https://minecraftcup.com/"},{"title":"Malaysia Minecraft EDU Challenge Winner","image":"https://img1.wsimg.com/isteam/ip/a691a9be-c688-44a1-8f97-9af155f9c090/Minecraft%20Edu%20Challenge%20Header2-06.png","description":"The Minecraft world created was selected as the second place in the International Senior Division of the Minecraft Education Challenge organized by the Ministry of Education Malaysia, Sunway Malls, and Microsoft.","link":"https://youtu.be/vwuWwo8-CTI?si=9lKva0eQb6icntaL"},{"title":"programming instructor","image":"https://kids.classmall.jp/_next/static/media/og_v2.6a1b5d8c.jpg","description":"YAGO Co., Ltd. operates an online programming school called \"Classmall Kids\" where I work as an instructor. Currently, I am conducting classes using the video game \"Minecraft.\"","link":"https://kids.classmall.jp/"},{"title":"IDEACTIVE JAPAN PROJECT Student Ambassador","image":"https://cdn.peatix.com/event/3387319/cover-O1Bf2URCdemH7mTxw6UkWhLeYFxR2Asg.png","description":"Microsoft, SoftBank, Meta, VISITS, and IOT Biz Lab are planning a business contest called \"IDEACTIVE JAPAN PROJECT,\" and I will be in charge of marketing as a student ambassador. We will also organize events such as a hackathon for elementary school students using Minecraft called \"IDEA CREATION WORKSHOP.\"","link":"https://ideactive.vis-its.com/"},{"title":"Team Outstndrs","image":"https://yutakobayashi.dev/works/outstndrs.png","description":"A group of digital creators who gathered after winning the Minecraft Cup, engaging in various digital fields such as world creation using Minecraft, videos, 3DCG, urban planning, and more online.","link":"https://outstndrs.com"},{"title":"Minecraft Cup 2021 Finalists & Winners","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3mIlBlcMxxWMrGPbzObVxwk2QQRMJGWZN0UkHO1qaaX4spdIJrGMKTArvSWpDNPl_Plg&usqp=CAU","description":"With a few friends, competed in a competition to showcase technical skills and critical thinking in Minecraft, became a finalist and received an award.","link":"https://youtu.be/B7V0NbCkZ_Y"}]
+[
+  {
+    "title": "Minecraft Cup 2023 Encouragement Award Received",
+    "image": "https://minecraftcup.com/2022/wp-content/themes/minecraft/img/favicon/ogp2023.png",
+    "description": "The team \"Team Outstanding Individuals\", composed of members ranging from elementary school students to high school students who are active on the Internet, won an award at the Minecraft Cup district competition held in Japan.",
+    "link": "https://minecraftcup.com/"
+  },
+  {
+    "title": "Malaysia Minecraft EDU Challenge Winner",
+    "image": "https://img1.wsimg.com/isteam/ip/a691a9be-c688-44a1-8f97-9af155f9c090/Minecraft%20Edu%20Challenge%20Header2-06.png",
+    "description": "The Minecraft world created was selected as the second place in the International Senior Division of the Minecraft Education Challenge organized by the Ministry of Education Malaysia, Sunway Malls, and Microsoft.",
+    "link": "https://youtu.be/vwuWwo8-CTI?si=9lKva0eQb6icntaL"
+  },
+  {
+    "title": "programming instructor",
+    "image": "https://kids.classmall.jp/_next/static/media/og_v2.6a1b5d8c.jpg",
+    "description": "YAGO Co., Ltd. operates an online programming school called \"Classmall Kids\" where I work as an instructor. Currently, I am conducting classes using the video game \"Minecraft.\"",
+    "link": "https://kids.classmall.jp/"
+  },
+  {
+    "title": "IDEACTIVE JAPAN PROJECT Student Ambassador",
+    "image": "https://cdn.peatix.com/event/3387319/cover-O1Bf2URCdemH7mTxw6UkWhLeYFxR2Asg.png",
+    "description": "Microsoft, SoftBank, Meta, VISITS, and IOT Biz Lab are planning a business contest called \"IDEACTIVE JAPAN PROJECT,\" and I will be in charge of marketing as a student ambassador. We will also organize events such as a hackathon for elementary school students using Minecraft called \"IDEA CREATION WORKSHOP.\"",
+    "link": "https://ideactive.vis-its.com/"
+  },
+  {
+    "title": "Team Outstndrs",
+    "image": "https://yutakobayashi.dev/works/outstndrs.png",
+    "description": "A group of digital creators who gathered after winning the Minecraft Cup, engaging in various digital fields such as world creation using Minecraft, videos, 3DCG, urban planning, and more online.",
+    "link": "https://outstndrs.com"
+  },
+  {
+    "title": "Minecraft Cup 2021 Finalists & Winners",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3mIlBlcMxxWMrGPbzObVxwk2QQRMJGWZN0UkHO1qaaX4spdIJrGMKTArvSWpDNPl_Plg&usqp=CAU",
+    "description": "With a few friends, competed in a competition to showcase technical skills and critical thinking in Minecraft, became a finalist and received an award.",
+    "link": "https://youtu.be/B7V0NbCkZ_Y"
+  }
+]

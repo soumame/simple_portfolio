@@ -69,6 +69,7 @@ async function translateRSSItems(rssItems) {
         );
 
         return {
+          date: item.date,
           title: translatedTitle.choices[0].message.content,
           image: item.image,
           description: translatedSnippet.choices[0].message.content,
