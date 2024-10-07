@@ -3,7 +3,7 @@
     {
       "name": "得丸 創生",
       "subname": "So Tokumaru",
-      "bio": "東南アジアどこかに留学中の高校生、そうまめこと得丸創生(とくまる そう)です。Blenderなどを使用した3D制作、Javascriptベースのフレームワーク(React等)を用いたウェブアプリケーション制作、そうまめの謎のグラフィックを作ったりするのが趣味。",
+      "bio": "東南アジアどこかに留学中の高校生、そうまめこと得丸創生(とくまる そう)です。Blenderなどを使用した3D制作、Reactウェブアプリケーション制作、そうまめの謎のグラフィックを作ったりするのが趣味。",
       "icon": "https://pbs.twimg.com/profile_images/1517715992469970945/_66xagxr_400x400.jpg"
     }
   ],
@@ -11,7 +11,7 @@
     {
       "name": "So Tokumaru",
       "subname": "得丸 創生",
-      "bio": "I'm So, High school student studying abroad in somewhere of south east asia, Interested on 3D creation with using Blender, Web app creation with using frameworks such as React, and making some graphics.",
+      "bio": "I'm So, High school student studying abroad in somewhere of south east asia, Interested on 3D creation with using Blender, Web app creation with using React, and making some graphics.",
       "icon": "https://pbs.twimg.com/profile_images/1517715992469970945/_66xagxr_400x400.jpg"
     }
   ]

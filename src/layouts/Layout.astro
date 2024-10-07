@@ -16,15 +16,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 <head>
   <ViewTransitions />
 </head>
-<body class="bg-gray-200 h-screen w-screen">
-  <div
-    class="h-full grid md:grid-cols-2 grid-cols-1 overflow-y-auto md:overflow-scroll"
-  >
+<body class="bg-gray-200 h-screen w-screen overflow-x-clip">
+  <div class="h-full grid md:grid-cols-2 grid-cols-1">
     <div
       class="flex justify-center items-center min-h-screen h-full w-screen md:w-auto"
       transition:animate={fade({ duration: "0.1s" })}
     >
-      <div class="md:p-4 p-2">
+      <div class="md:p-4 p-2 md:fixed">
         <div id="about">
           <About />
           <Contact />
@@ -34,7 +32,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
     </div>
 
     <div
-      class="md:overflow-scroll flex flex-col md:pr-4 p-2 scroll-smooth mx-auto md:max-h-screen max-h-0 justify-right items-right"
+      class="flex flex-col mx-auto md:max-h-screen max-h-0 justify-right items-right"
     >
       <div id="who"><Who /></div>
       <div id="blogs"><Blogs /></div>

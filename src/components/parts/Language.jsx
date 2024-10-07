@@ -10,7 +10,7 @@ const LanguagePicker = () => {
       <DropdownMenu.Trigger asChild>
         <button
           className="text-orange-600 hover:bg-gray-300 transition duration-200 ease-in-out
-         rounded-3xl p-4 md:p-5 no-underline bg-gray-300/50 backdrop-blur-md shadow"
+         rounded-3xl p-3 md:p-4 no-underline bg-gray-300/50 backdrop-blur-md shadow"
           aria-label="Change Language"
         >
           <Languages />
