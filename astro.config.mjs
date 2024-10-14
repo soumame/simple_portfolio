@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: "https://so-bean.work",
+  site: "https://tokumaru.work",
   i18n: {
     defaultLocale: "ja",
     locales: ["en", "ja"],
