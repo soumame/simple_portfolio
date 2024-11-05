@@ -1,5 +1,12 @@
 [
   {
+    "date": "2024, Nov",
+    "title": "未踏ジュニア2024 修了",
+    "image": "https://jr.mitou.org/assets/img/projects/2024/tutoriallm.webp",
+    "description": "クリエータ支援プログラム未踏ジュニア2024にて、TutoriaLLMプロジェクトが採択されました。AIを統合したプログラミングチュートリアルを配信するOSS（誰でも自由に使えるソフトウェア）を開発しています。",
+    "link": "https://jr.mitou.org/projects/2024/tutoriallm"
+  },
+  {
     "date": "2024, May",
     "title": "未踏ジュニア2024 採択",
     "image": "https://jr.mitou.org/assets/img/facebook_ogp_image.png",
@@ -30,7 +37,7 @@
     "date": "2022, Dec",
     "title": "プログラミング講師",
     "image": "https://kids.classmall.jp/_next/static/media/og_v2.6a1b5d8c.jpg",
-    "description": "株式会社YAGOが運営するオンラインプログラミング教室「Classmall Kids」にて講師をしています。ビデオゲーム「マインクラフト」を用いた授業などを展開中。",
+    "description": "2024年初旬まで、株式会社YAGOが運営するオンラインプログラミング教室「Classmall Kids」にて講師をしていました。ビデオゲーム「マインクラフト」を用いた授業などを展開中。",
     "link": "https://kids.classmall.jp/"
   },
   {
