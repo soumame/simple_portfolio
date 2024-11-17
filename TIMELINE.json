@@ -1,6 +1,12 @@
 [
   {
     "date": "2024, Nov",
+    "title": "アプリ甲子園2024 AI部門 技術賞・優勝",
+    "description": "日本全国の中高生が競う、アプリ開発のコンテスト「アプリ甲子園2024」にて、TutoriaLLMプロジェクトがAI部門において本戦に進出し、技術賞と優勝・総務大臣賞を受賞しました。",
+    "link": "https://applikoshien.jp/"
+  },
+  {
+    "date": "2024, Nov",
     "title": "未踏ジュニア2024 修了",
     "image": "https://jr.mitou.org/assets/img/projects/2024/tutoriallm.webp",
     "description": "採択されたTutoriaLLMプロジェクトを11月4日の成果報告会をもって修了しました。また、同日にビジョナル株式会社様より、企業賞としてVisional賞を受賞しました。",
