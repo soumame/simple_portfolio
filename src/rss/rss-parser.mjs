@@ -2,6 +2,8 @@ import Parser from "rss-parser";
 import fs from "fs-extra";
 import ogs from "open-graph-scraper";
 import { red } from "kolorist";
+import path from "path";
+import { green } from "kolorist";
 
 const parser = new Parser();
 
@@ -26,17 +28,19 @@ async function fetchFeedItems(url) {
     if (!feed?.items?.length) return [];
 
     const feedItems = await Promise.all(
-      feed.items.map(async ({ title, contentSnippet, link, isoDate }) => {
-        const og = await getOgImageURL(link);
-        return {
-          title,
-          contentSnippet: contentSnippet?.replace(/\n/g, ""),
-          link,
-          isoDate,
-          og,
-          dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
-        };
-      }),
+      feed.items
+        .slice(0, 20)
+        .map(async ({ title, contentSnippet, link, isoDate }) => {
+          const og = await getOgImageURL(link);
+          return {
+            title,
+            contentSnippet: contentSnippet?.replace(/\n/g, ""),
+            link,
+            isoDate,
+            og,
+            dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
+          };
+        }),
     );
 
     return feedItems.filter(({ title, link }) => title && link);
@@ -47,9 +51,25 @@ async function fetchFeedItems(url) {
 }
 
 (async function () {
-  const data = await fetchFeedItems(process.env.BLOG_RSS_URL);
+  const filePath = path.resolve("RSS.json");
+  const here = path.resolve("./src/rss");
 
-  if (data) {
+  fs.copyFile(filePath, `${here}/items-ja.json`, (err) => {
+    console.log(green(`try copy ${filePath} to ${here}.json`));
+    if (err) throw err;
+  });
+
+  const rssSources = fs.readJsonSync(filePath);
+
+  const data = [];
+  for (const { url } of rssSources) {
+    const feedItems = await fetchFeedItems(url);
+    if (Array.isArray(feedItems)) {
+      data.push(...feedItems);
+    }
+  }
+
+  if (data.length) {
     try {
       data.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
 
