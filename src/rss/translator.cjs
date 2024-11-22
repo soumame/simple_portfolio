@@ -18,7 +18,7 @@ const openai = new OpenAI({
 async function translateText(text, targetLanguage) {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "GPT-4o mini",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         {

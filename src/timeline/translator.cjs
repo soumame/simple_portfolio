@@ -17,7 +17,7 @@ const dictionary = fs.readFileSync("./DICTIONARY.json", "utf8");
 // }
 
 const TARGET_LANGUAGE = "en";
-const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}\n And this is proper noun dictionary for translation(written by json): ${dictionary}`;
+const SYSTEM_PROMPT = `Translate the following text to target language: ${TARGET_LANGUAGE}\n If there are no description, just leave it empty or return "no information provided"" And this is proper noun dictionary for translation(written by json): ${dictionary}`;
 
 // OpenAI API キーの設定
 const openai = new OpenAI({
@@ -28,7 +28,7 @@ const openai = new OpenAI({
 async function translateText(text, targetLanguage) {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "GPT-4o mini",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         {

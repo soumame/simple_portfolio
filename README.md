@@ -123,5 +123,5 @@ GPTによるサマライズを使用する際に、固有名詞を登録する�
 ## contributrion
 
 Shu, [Twitter](https://twitter.com/shu_out)
-GPT-4 [Website](https://openai.com/)
+GPT-4o [Website](https://openai.com/)
 Google 先輩, [website](https://www.google.com/)
