@@ -17,22 +17,23 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
   <ViewTransitions />
 </head>
 <body class="bg-gray-200 h-screen w-screen overflow-x-clip">
-  <div class="h-full grid md:grid-cols-2 grid-cols-1">
+  <div class="h-full grid lg:grid-cols-2 grid-cols-1">
     <div
-      class="flex justify-center items-center min-h-screen h-full w-screen md:w-auto"
+      class="flex justify-center items-center min-h-screen h-full w-screen lg:w-auto"
       transition:animate={fade({ duration: "0.1s" })}
     >
-      <div class="p-4 md:fixed">
-        <div id="about">
-          <About />
-          <Contact />
-          <Links slice="3" />
-        </div>
+      <div
+        id="about"
+        class="p-4 lg:fixed w-full flex flex-col justify-center items-center"
+      >
+        <About />
+        <Contact />
+        <Links slice="3" />
       </div>
     </div>
 
     <div
-      class="flex p-2 flex-col mx-auto md:max-h-screen max-h-0 max-w-2xl pt-[10%] justify-right items-right"
+      class="flex p-2 flex-col mx-auto lg:max-h-screen max-h-0 max-w-2xl pt-[10%] justify-right items-right"
     >
       <div id="who"><Who /></div>
       <div id="blogs"><Blogs /></div>

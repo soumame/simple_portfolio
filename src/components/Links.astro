@@ -21,17 +21,20 @@ try {
 const { slice } = Astro.props;
 ---
 
-<div id="scrollContainer" class="mt-4 py-3">
+<div
+  id="scrollContainer"
+  class="mt-4 py-3 w-full flex flex-col justify-center items-center"
+>
   {
     data.slice(0, slice).map(({ title, link }: any) => (
-      <div class="link p-3 md:p-4 mt-2 rounded-3xl shadow-md hover:shadow-lg transition-shadow border border-gray-500/10 relative">
-        <p class="flex justify-between text-sm md:font-bold text-gray-700 gap-2">
+      <div class="link p-3 md:p-4 mt-2 rounded-3xl shadow-md hover:shadow-lg transition-shadow border border-gray-500/10 relative max-w-lg w-full">
+        <p class="flex justify-between text-sm md:font-bold text-gray-700 gap-2 w-full text-wrap">
           {title}
           <span>
             <Link class="text-gray-400" />{" "}
           </span>
         </p>
-        <p class="md:text-sm text-xs text-gray-400">{link}</p>
+        <p class="md:text-sm text-xs truncate text-gray-400">{link}</p>
         <a
           href={link}
           class="absolute w-full h-full top-0 left-0"
