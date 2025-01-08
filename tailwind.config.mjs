@@ -40,10 +40,10 @@ export default {
     fontFamily: {
       mono: [
         '"IBM Plex Mono"',
-        "Zen Kaku Gothic Antique",
+        "Zen Kaku Gothic New",
         "Noto Sans Japanese",
       ],
-      serif: ['"IBM Plex Serif"', "Noto Serif JP"],
+      serif: ["IBM Plex Serif", "Noto Serif Japanese"],
       noto: ["Noto Sans Japanese 200"],
     },
   },
