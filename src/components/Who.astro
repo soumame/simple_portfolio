@@ -17,6 +17,7 @@ try {
   data = null;
 }
 import { Bot, Quote } from "lucide-astro";
+import { QuoteIcon } from "lucide-react";
 ---
 
 <div class="snap-center w-full py-4 px-2 md:px-4">
@@ -38,16 +39,13 @@ import { Bot, Quote } from "lucide-astro";
       </div>
     </div>
 
-    <div id="scrollContainer" class="mt-4 py-3 relative font-noto">
+    <div id="scrollContainer" class="relative font-noto">
       <div
-        class="px-2 md:px-4 py-8 bg-transparent shadow-inner shadow-gray-500/30 border rounded-3xl italic"
+        class="px-2 md:px-4 py-6 rounded-3xl italic"
       >
-        <div class="rounded-full p-2 shadow shadow-gray-500/30 flex w-10 h-10">
-          <Bot class="text-orange-400/60" />
-        </div>
-        <div class="app"></div>
         <p class="mt-2 leading-loose text-sm text-gray-500">
           {data}
+          <Bot class="text-orange-600/70 inline"/>
         </p>
       </div>
     </div>
